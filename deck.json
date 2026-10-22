@@ -1,0 +1,369 @@
+[
+  {
+    "n": 1,
+    "id": "p01_cover",
+    "chapter": 0,
+    "ref": "0.1–0.2 / 0.5",
+    "type": "封面",
+    "minutes": 2,
+    "title": "Why：AI业务价值与三方互补优势"
+  },
+  {
+    "n": 2,
+    "id": "p02_overview",
+    "chapter": 0,
+    "ref": "0.3–0.4 / 0.5",
+    "type": "领导议题总览",
+    "minutes": 3,
+    "title": "Why：从部门场景走向可持续业务能力"
+  },
+  {
+    "n": 3,
+    "id": "p03_opening",
+    "chapter": 0,
+    "ref": "0.1–0.5",
+    "type": "章节综述",
+    "minutes": 8,
+    "title": "合作不是一次产品交付，而是建设持续业务能力"
+  },
+  {
+    "n": 4,
+    "id": "p04_roles",
+    "chapter": 0,
+    "ref": "0.1–0.2",
+    "type": "内容与讨论",
+    "minutes": 8,
+    "title": "三方优势：业务验证、企业级AI与用户中心应用"
+  },
+  {
+    "n": 5,
+    "id": "p05_value",
+    "chapter": 0,
+    "ref": "0.2 / 0.5",
+    "type": "内容与讨论",
+    "minutes": 7,
+    "title": "Why now：从散、浅、贵走向新阶段"
+  },
+  {
+    "n": 6,
+    "id": "p06_confirmations",
+    "chapter": 0,
+    "ref": "0.4",
+    "type": "决策工作页",
+    "minutes": 7,
+    "title": "0.4 今天必须获得的四类确认"
+  },
+  {
+    "n": 7,
+    "id": "p07_architecture",
+    "chapter": 1,
+    "ref": "1.1–1.2",
+    "type": "章节综述",
+    "minutes": 8,
+    "title": "1. 让业务、知识、模型和行动连成一条链"
+  },
+  {
+    "n": 8,
+    "id": "p08_semantic_data",
+    "chapter": 1,
+    "ref": "1.2 第二–三层",
+    "type": "内容与讨论",
+    "minutes": 10,
+    "title": "1.2 从系统字段到统一业务上下文"
+  },
+  {
+    "n": 9,
+    "id": "p09_model_tasks",
+    "chapter": 1,
+    "ref": "1.2 第四层",
+    "type": "内容与讨论",
+    "minutes": 9,
+    "title": "1.2 判断能力必须分工"
+  },
+  {
+    "n": 10,
+    "id": "p10_action_boundary",
+    "chapter": 1,
+    "ref": "1.2 第五–六层",
+    "type": "内容与讨论",
+    "minutes": 8,
+    "title": "1.2 从能理解到能执行、可审计"
+  },
+  {
+    "n": 11,
+    "id": "p11_cases",
+    "chapter": 2,
+    "ref": "2.1–2.7",
+    "type": "章节综述",
+    "minutes": 10,
+    "title": "2. 七个案例，各证明一件事"
+  },
+  {
+    "n": 12,
+    "id": "p12_case_port",
+    "chapter": 2,
+    "ref": "2.1",
+    "type": "Demo 与讨论",
+    "minutes": 15,
+    "title": "2.1 港口拖柜：无头 Agent 跑完整流程",
+    "video": true
+  },
+  {
+    "n": 13,
+    "id": "p13_case_wms",
+    "chapter": 2,
+    "ref": "2.2",
+    "type": "Demo 与讨论",
+    "minutes": 15,
+    "title": "2.2 WMS Dynamic Form：业务人员快速做应用",
+    "video": true
+  },
+  {
+    "n": 14,
+    "id": "p14_case_bo",
+    "chapter": 2,
+    "ref": "2.3",
+    "type": "Demo 与讨论",
+    "minutes": 15,
+    "title": "2.3 BO / Customer Promise：重点 Hero Cases 之一",
+    "video": true
+  },
+  {
+    "n": 15,
+    "id": "p15_bo_walkthrough",
+    "chapter": 2,
+    "ref": "2.3 推荐 Demo 场景",
+    "type": "流程推演",
+    "minutes": 15,
+    "title": "2.3 把 BO 的八步闭环逐步走通"
+  },
+  {
+    "n": 16,
+    "id": "p16_bo_quality",
+    "chapter": 2,
+    "ref": "2.3 指标与风险",
+    "type": "评估讨论",
+    "minutes": 15,
+    "title": "2.3 指标不是承诺；治理不是把模型锁死"
+  },
+  {
+    "n": 17,
+    "id": "p17_case_bnp",
+    "chapter": 2,
+    "ref": "2.4",
+    "type": "Demo 与讨论",
+    "minutes": 15,
+    "title": "2.4 BNP → Dynamic Form → PEI",
+    "video": true
+  },
+  {
+    "n": 18,
+    "id": "p18_case_sop",
+    "chapter": 2,
+    "ref": "2.5",
+    "type": "Demo 与讨论",
+    "minutes": 15,
+    "title": "2.5 Record & Reply → CEC SOP",
+    "video": true
+  },
+  {
+    "n": 19,
+    "id": "p19_case_esvc",
+    "chapter": 2,
+    "ref": "2.6",
+    "type": "Demo 与讨论",
+    "minutes": 10,
+    "title": "2.6 eSVC Small Model：高频判断与成本分层",
+    "video": true
+  },
+  {
+    "n": 20,
+    "id": "p20_case_genesys",
+    "chapter": 2,
+    "ref": "2.7",
+    "type": "Demo 与讨论",
+    "minutes": 15,
+    "title": "2.7 CEC + Genesys AI App：内部能力走向产品",
+    "video": true
+  },
+  {
+    "n": 21,
+    "id": "p21_cases_selection",
+    "chapter": 2,
+    "ref": "2 / 6.4",
+    "type": "案例组合工作页",
+    "minutes": 10,
+    "title": "2. 为首批 Hero Cases 做组合选择"
+  },
+  {
+    "n": 22,
+    "id": "p22_foundation",
+    "chapter": 3,
+    "ref": "3.1–3.4",
+    "type": "章节综述",
+    "minutes": 5,
+    "title": "3. 能力底座：不堆数据，不堆模型"
+  },
+  {
+    "n": 23,
+    "id": "p23_hybrid",
+    "chapter": 3,
+    "ref": "3.1–3.3",
+    "type": "能力分工讨论",
+    "minutes": 10,
+    "title": "三方Hybrid AI：从企业级能力到用户业务闭环"
+  },
+  {
+    "n": 24,
+    "id": "p24_portal",
+    "chapter": 3,
+    "ref": "3.4",
+    "type": "内容与讨论",
+    "minutes": 10,
+    "title": "3.4 面向人的 Dashboard；面向 Agent 的 Marketplace"
+  },
+  {
+    "n": 25,
+    "id": "p25_evolution",
+    "chapter": 3,
+    "ref": "3 本节大纲 / 6.1 / 7.3",
+    "type": "治理讨论",
+    "minutes": 5,
+    "title": "3. 从 Open 到 Transform，再到 Engineer"
+  },
+  {
+    "n": 26,
+    "id": "p26_tools",
+    "chapter": 4,
+    "ref": "4.1–4.2",
+    "type": "章节综述",
+    "minutes": 5,
+    "title": "4. 两套 Business Oriented Tools，共用同一底座"
+  },
+  {
+    "n": 27,
+    "id": "p27_runtime",
+    "chapter": 4,
+    "ref": "4.1",
+    "type": "操作推演与讨论",
+    "minutes": 10,
+    "title": "4.1 ITEMGPT Runtime：目标表达、标准化、后台执行"
+  },
+  {
+    "n": 28,
+    "id": "p28_factory",
+    "chapter": 4,
+    "ref": "4.2",
+    "type": "构建推演与讨论",
+    "minutes": 15,
+    "title": "4.2 Agent Factory：草案到可治理发布"
+  },
+  {
+    "n": 29,
+    "id": "p29_qualification",
+    "chapter": 4,
+    "ref": "4.2 Qualification",
+    "type": "验收工作页",
+    "minutes": 10,
+    "title": "4.2 能跑起来，不等于可以上线"
+  },
+  {
+    "n": 30,
+    "id": "p30_ontology",
+    "chapter": 5,
+    "ref": "5.1–5.3",
+    "type": "章节综述",
+    "minutes": 5,
+    "title": "5. Ontology Studio：知识挖掘的第一环"
+  },
+  {
+    "n": 31,
+    "id": "p31_ontology_bo",
+    "chapter": 5,
+    "ref": "5.3",
+    "type": "共建内容页",
+    "minutes": 10,
+    "title": "5.3 用 BO 的对象、关系、规则和 Action 建模"
+  },
+  {
+    "n": 32,
+    "id": "p32_ontology_workshop",
+    "chapter": 5,
+    "ref": "5.2–5.3",
+    "type": "分组工作页",
+    "minutes": 20,
+    "title": "5.2–5.3 现场共建一张可执行业务模型"
+  },
+  {
+    "n": 33,
+    "id": "p33_roadmap",
+    "chapter": 6,
+    "ref": "6.1–6.11",
+    "type": "章节综述",
+    "minutes": 5,
+    "title": "6. 合作计划：复用底座，形成联合产品"
+  },
+  {
+    "n": 34,
+    "id": "p34_alignment",
+    "chapter": 6,
+    "ref": "6.1",
+    "type": "能力对齐讨论",
+    "minutes": 15,
+    "title": "6.1 Accelerator 提供什么，Item 不重复建设什么"
+  },
+  {
+    "n": 35,
+    "id": "p35_build_train",
+    "chapter": 6,
+    "ref": "6.2–6.5",
+    "type": "联合交付工作页",
+    "minutes": 15,
+    "title": "6.2–6.5 先理解业务，再共建、训练"
+  },
+  {
+    "n": 36,
+    "id": "p36_product_scale",
+    "chapter": 6,
+    "ref": "6.6–6.8 / 6.9",
+    "type": "产品化讨论",
+    "minutes": 15,
+    "title": "6.6–6.8 深耕、沉淀产品，再探索外部推广"
+  },
+  {
+    "n": 37,
+    "id": "p37_cost_decisions",
+    "chapter": 6,
+    "ref": "6.9–6.11 / 7.3",
+    "type": "成本与治理工作页",
+    "minutes": 15,
+    "title": "6.11 模型路由与成本治理，先列决策再谈价格"
+  },
+  {
+    "n": 38,
+    "id": "p38_decisions",
+    "chapter": 7,
+    "ref": "7.1",
+    "type": "章节综述",
+    "minutes": 5,
+    "title": "7. From Hero Cases to Joint Product"
+  },
+  {
+    "n": 39,
+    "id": "p39_checklist",
+    "chapter": 7,
+    "ref": "7.2–7.3",
+    "type": "会前与会后清单",
+    "minutes": 15,
+    "title": "7.2–7.3 准备项与待决策项不能混为承诺"
+  },
+  {
+    "n": 40,
+    "id": "p40_closing",
+    "chapter": 7,
+    "ref": "7.1 / 结论",
+    "type": "收敛决策工作页",
+    "minutes": 10,
+    "title": "从Hero Cases走向可持续、可衡量、更平衡"
+  }
+]

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1280,initial-scale=1">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    .slide-container{
+      width:1280px;
+      height:720px;
+      background:#F7F7F9;
+      color:#4A4A4D;
+      font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;
+      display:flex;
+      flex-direction:column;
+    }
+    .frame{
+      display:grid;
+      grid-template-columns:240px 1040px;
+      height:100%;
+      gap:0;
+    }
+
+    /* RAIL */
+    .rail{
+      border-right:1px solid #D1D1D6;
+      display:flex;
+      flex-direction:column;
+      padding-top:18px;
+      padding-left:20px;
+      padding-right:16px;
+      gap:14px;
+      min-height:0;
+    }
+    .brand{font-size:24px;font-weight:800;letter-spacing:-1px;color:#1A1A1A}
+    .rail-kicker{font-size:11px;letter-spacing:2px;color:#8E8E93}
+    .chapters{display:flex;flex-direction:column;gap:12px;padding-top:14px;overflow:auto}
+    .chapter{font-size:15px;display:flex;gap:10px;color:#8E8E93;line-height:1.3}
+    .chapter .no{width:20px;font-family:monospace}
+    .chapter.active{color:#1A1A1A;font-weight:700}
+    .chapter.active .no{color:#8BAEAE}
+    .rail-bottom{margin-top:auto;margin-bottom:16px;font-size:12px;line-height:1.6;color:#8E8E93}
+
+    /* MAIN */
+    .main{
+      display:flex;
+      flex-direction:column;
+      padding-top:18px;
+      padding-left:32px;
+      padding-right:44px;
+      min-width:0;
+      height:100%;
+    }
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #D1D1D6;
+      height:36px;
+      font-size:12px;
+      letter-spacing:.4px;
+      color:#8E8E93;
+      flex:0 0 auto;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      border:1px solid #D1D1D6;
+      border-radius:4px;
+      padding:3px 8px;
+      min-height:22px;
+      font-size:12px;
+      line-height:1.2;
+      color:#4A4A4D;
+    }
+    .top .ref{color:#8BAEAE;font-weight:600}
+
+.heading{padding-top:12px;flex:0 0 auto}
+    h1{font-size:28px;line-height:1.25;color:#1A1A1A;font-weight:700;letter-spacing:-.4px}
+    .lead{font-size:15px;line-height:1.5;color:#8E8E93;padding-top:8px}
+
+    .content{
+      display:flex;
+      flex-direction:column;
+      flex:1 1 auto;
+      justify-content:flex-start;
+      gap:12px;
+      padding-top:8px;
+      overflow:auto;
+      min-height:0;
+    }
+
+    h2{font-size:20px;line-height:1.35;color:#1A1A1A;font-weight:650}
+    h3{font-size:17px;line-height:1.35;color:#1A1A1A}
+    p,li{font-size:15px;line-height:1.5}
+    .small{font-size:13px;line-height:1.45;color:#8E8E93}
+
+    .two{display:grid;grid-template-columns:1.08fr .92fr;gap:18px}
+    .section{border-top:1px solid #D1D1D6;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+    .line{border-top:1px solid #D1D1D6}
+.callout{border-top:1px solid #D1D1D6;border-bottom:1px solid #D1D1D6;padding-top:10px;min-height:48px;display:flex;align-items:flex-start;gap:12px}
+    .number{font-family:monospace;font-size:22px;color:#8BAEAE;line-height:1}
+
+    .footer{
+      border-top:1px solid #D1D1D6;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      margin-top:12px;
+      margin-bottom:12px;
+      padding-top:10px;
+      font-size:12px;
+      line-height:1.5;
+      flex:0 0 auto;
+    }
+    .footer strong{color:#1A1A1A;font-weight:650}
+
+    .object-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
+    .object{border-top:1px solid #1A1A1A;padding-top:6px;min-height:56px}
+    .object .kind{font-size:11px;color:#8BAEAE;letter-spacing:.6px}
+    .object b{display:block;color:#1A1A1A;font-size:15px;font-weight:650;margin-top:4px}
+    .object span{display:block;font-size:13px;line-height:1.4;margin-top:3px;color:#4A4A4D}
+
+    .source-list{display:flex;flex-direction:column;gap:0}
+.source-row{display:grid;grid-template-columns:140px 1fr;gap:10px;border-bottom:1px solid #D1D1D6;padding-top:6px}
+    .source-row b{font-size:14px;color:#1A1A1A;font-weight:650}
+    .source-row span{font-size:13px;line-height:1.4}
+    .marker{display:inline-block;border:1px solid #D1D1D6;border-radius:4px;padding:3px 8px;font-size:12px;color:#4A4A4D;margin-bottom:2px}
+
+    .three-points{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .three-points .section{min-height:100px}
+    .three-points p{font-size:14px;line-height:1.45}
+
+    /* ensure small adjustments for very long text not to overflow */
+    .chapters, .content, .object-grid, .three-points {max-height:100%}
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="frame">
+      <aside class="rail">
+        <div class="brand">AI Accelerator</div><div class="rail-kicker">BUSINESS VALUE WORKSHOP</div>
+        <div class="chapters"><div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div><div class="chapter active"><span class="no">1</span><span>总体架构</span></div><div class="chapter"><span class="no">2</span><span>七个案例</span></div><div class="chapter"><span class="no">3</span><span>能力底座</span></div><div class="chapter"><span class="no">4</span><span>业务工具</span></div><div class="chapter"><span class="no">5</span><span>Ontology</span></div><div class="chapter"><span class="no">6</span><span>合作计划</span></div><div class="chapter"><span class="no">7</span><span>决策收敛</span></div></div>
+        <div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div>
+      </aside>
+      <main class="main">
+        <header class="top"><span class="ref">MD §1.2 第二–三层</span><span class="badge">内容与讨论 · 建议 10 分钟</span></header>
+        <div class="heading"><h1>1.2 从系统字段到统一业务上下文</h1><p class="lead">Ontology 让对象和关系可解释；Data Hub 让事实带着来源、时间与责任进入流程。</p></div>
+        <div class="content">
+          <div class="two">
+            <section class="section">
+              <span class="marker">Ontology Studio · 对象关系，不是字段清单</span>
+              <div class="object-grid">
+                <div class="object"><div class="kind">主体</div><b>Customer</b><span>承诺对象与服务关系</span></div>
+                <div class="object"><div class="kind">交易</div><b>Order / Back Order</b><span>需求、缺料与状态</span></div>
+                <div class="object"><div class="kind">资源</div><b>Part / Inventory</b><span>可用量与替换约束</span></div>
+                <div class="object"><div class="kind">执行</div><b>Repair / Shipment</b><span>维修节点与运输状态</span></div>
+                <div class="object"><div class="kind">判断</div><b>ETA / Priority</b><span>风险、优先级与解释</span></div>
+                <div class="object"><div class="kind">结果</div><b>Service Promise / Action</b><span>承诺与可执行动作</span></div>
+              </div>
+              <p class="small">关系示例：缺料影响维修与 Service Promise；库存和运输状态改变 ETA；Priority 影响替换与分配规则。具体对象范围待业务 Owner 确认。</p>
+            </section>
+            <section class="section">
+              <span class="marker">Data Hub · 事实需要可追溯</span>
+              <div class="source-list">
+                <div class="source-row"><b>客户与订单</b><span>CRM / Order：请求、承诺、状态</span></div>
+                <div class="source-row"><b>执行与资源</b><span>维修、Field Service、库存、物料、物流节点</span></div>
+                <div class="source-row"><b>知识与规则</b><span>UKM / EKP / EKF、SOP、PRD、历史案例</span></div>
+                <div class="source-row"><b>上下文标记</b><span>来源系统、更新时间、Owner、脱敏与权限</span></div>
+              </div>
+            </section>
+          </div>
+          <div class="three-points">
+            <section class="section"><h3>冲突如何处理</h3><p>同一 Order 在不同系统状态不一致时，不静默覆盖；保留来源与时间，标记冲突，交给规则或人工确认。</p></section>
+            <section class="section"><h3>过期如何暴露</h3><p>ETA、库存和知识都需要新鲜度口径。过期不是“没有数据”，而是进入判断前的风险信号。</p></section>
+            <section class="section"><h3>工作坊推演</h3><p>选一个 BO 情境，逐项填写对象、关系、事实源、更新时间、Owner 与缺失后的替代路径；不声称已实现接入。</p></section>
+          </div>
+          <div class="callout"><span class="number">↳</span><p><strong>连接下一页：</strong>上下文准备好后，系统仍需回答“如何判断”。下一页把预测、优化、规则、小模型和 LLM 放进同一业务任务，而不是堆算法名称。</p></div>
+        </div>
+        <footer class="footer"><span><strong>讨论 / 产出</strong> 哪三个对象关系最先影响 Customer Promise？产出：对象—事实源—Owner—新鲜度—冲突处理表。</span><span>08 / 40</span></footer>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

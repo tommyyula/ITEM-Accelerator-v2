@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{
+  width:1280px;
+  height:720px;
+  background:#F7F7F9;
+  color:#4A4A4D;
+  font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;
+  display:flex;
+  flex-direction:column;
+}
+.frame{
+  display:grid;
+  grid-template-columns:240px 1040px;
+  flex:1;
+  height:100%;
+  min-height:0;
+}
+.rail{
+  border-right:1px solid #D1D1D6;
+  display:flex;
+  flex-direction:column;
+  padding-top:18px;
+  padding-left:16px;
+  padding-right:12px;
+  gap:12px;
+  min-height:0;
+}
+.brand{
+  font-size:24px;
+  font-weight:800;
+  letter-spacing:-0.5px;
+  color:#1A1A1A;
+}
+.rail-kicker{
+  font-size:11px;
+  letter-spacing:2px;
+  color:#8E8E93;
+}
+.chapters{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding-top:12px;
+}
+.chapter{
+  font-size:15px;
+  display:flex;
+  gap:10px;
+  color:#8E8E93;
+  line-height:1.3;
+  align-items:center;
+}
+.chapter .no{
+  width:20px;
+  font-family:monospace;
+}
+.chapter.active{color:#1A1A1A;font-weight:700}
+.chapter.active .no{color:#8BAEAE}
+.rail-bottom{
+  margin-top:auto;
+  margin-bottom:18px;
+  font-size:12px;
+  line-height:1.6;
+  color:#8E8E93;
+}
+.main{
+  display:flex;
+  flex-direction:column;
+  padding-top:14px;
+  padding-left:28px;
+  padding-right:36px;
+  min-width:0;
+  min-height:0;
+  height:100%;
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #D1D1D6;
+  min-height:34px;
+  font-size:12px;
+  letter-spacing:.4px;
+  color:#8E8E93;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid #D1D1D6;
+  border-radius:4px;
+  padding-top:2px;
+  padding-left:8px;
+  padding-right:8px;
+  min-height:22px;
+  font-size:11px;
+  line-height:1.2;
+  color:#4A4A4D;
+}
+.top .ref{color:#8BAEAE;font-weight:600}
+.heading{padding-top:14px}
+h1{
+  font-size:28px;
+  line-height:1.25;
+  color:#1A1A1A;
+  font-weight:700;
+  letter-spacing:-.4px;
+}
+.lead{
+  font-size:15px;
+  line-height:1.45;
+  color:#8E8E93;
+  padding-top:8px;
+}
+.content{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  justify-content:flex-start;
+  gap:10px;
+  padding-top:12px;
+  min-height:0;
+}
+h2{font-size:20px;line-height:1.3;color:#1A1A1A;font-weight:650;margin-bottom:6px}
+h3{font-size:15px;line-height:1.3;color:#1A1A1A;margin-bottom:4px}
+p,li{font-size:15px;line-height:1.45}
+.small{font-size:13px;line-height:1.4;color:#8E8E93}
+.section{border-top:1px solid #D1D1D6;padding-top:8px;display:flex;flex-direction:column;gap:8px}
+.footer{
+  border-top:1px solid #D1D1D6;
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  margin-top:10px;
+  margin-bottom:14px;
+  padding-top:8px;
+  font-size:12px;
+  line-height:1.4;
+  align-items:center;
+}
+.footer strong{color:#1A1A1A;font-weight:650}
+.decision-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.route-table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.3}
+.route-table th{text-align:left;color:#1A1A1A;font-size:13px;border-bottom:1px solid #1A1A1A;padding:6px 7px}
+.route-table td{border-bottom:1px solid #D1D1D6;padding:6px 7px;vertical-align:top}
+.route-table td:first-child{width:27%;font-weight:650;color:#1A1A1A}
+.route-table td:nth-child(2){width:28%}
+.route-table td:nth-child(3){width:45%}
+.mark{display:inline-block;border:1px solid #8BAEAE;border-radius:4px;padding:2px 6px;font-size:12px;margin-right:4px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}
+.field{border-left:3px solid #B4ACBE;padding-left:10px}
+.field:nth-child(2){border-left-color:#8BAEAE}
+.field:nth-child(3){border-left-color:#E2D9A5}
+.field:nth-child(4){border-left-color:#8BAEAE}
+.field h3{font-size:14px;margin-bottom:6px}
+.field p{font-size:13px;line-height:1.35;margin:0}
+.bottomline{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6px}
+.bottomline p{font-size:13px;line-height:1.35;margin:0}
+.caution{border-left:3px solid #E2D9A5;padding-left:12px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="frame">
+    <aside class="rail">
+      <div class="brand">item</div>
+      <div class="rail-kicker">BUSINESS VALUE WORKSHOP</div>
+      <nav class="chapters">
+        <div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div>
+        <div class="chapter"><span class="no">1</span><span>总体架构</span></div>
+        <div class="chapter"><span class="no">2</span><span>七个案例</span></div>
+        <div class="chapter"><span class="no">3</span><span>能力底座</span></div>
+        <div class="chapter"><span class="no">4</span><span>业务工具</span></div>
+        <div class="chapter"><span class="no">5</span><span>Ontology</span></div>
+        <div class="chapter active"><span class="no">6</span><span>合作计划</span></div>
+        <div class="chapter"><span class="no">7</span><span>决策收敛</span></div>
+      </nav>
+      <div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div>
+    </aside>
+    <main class="main">
+      <header class="top">
+        <span class="ref">MD §6.9–6.11 / 7.3</span>
+        <span class="badge">成本与治理工作页 · 建议 15 分钟</span>
+      </header>
+      <div class="heading">
+        <h1>6.11 模型路由与成本治理，先列决策再谈价格</h1>
+        <p class="lead">成本治理不是先定价，而是先把任务、模型、数据边界、质量证据与计量方式对齐；任何费率与分摊方式均待确认。</p>
+      </div>
+      <div class="content">
+        <div class="decision-grid">
+          <section class="section">
+            <h2>任务到能力的路由候选</h2>
+            <table class="route-table">
+              <thead>
+                <tr><th>业务任务</th><th>候选能力</th><th>路由判断与证据</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>稳定分类、意图与高频路由</td>
+                  <td><span class="mark">小模型</span><span class="mark">规则</span></td>
+                  <td>优先低成本与可重复性；需验证目标、阈值、人工接管。</td>
+                </tr>
+                <tr>
+                  <td>领域理解、解释与多 Agent 协作</td>
+                  <td><span class="mark">ISS-LRM</span><span class="mark">通用 LLM</span></td>
+                  <td>按能力边界、数据使用范围、上下文与质量指标选择；部署位置待确认。</td>
+                </tr>
+                <tr>
+                  <td>ETA、需求、风险等预测</td>
+                  <td><span class="mark">预测模型</span></td>
+                  <td>输出时间窗、风险或置信信息；必须关联事实源、版本和业务 Owner。</td>
+                </tr>
+                <tr>
+                  <td>库存、运输、料件与计划权衡</td>
+                  <td><span class="mark">优化模型</span></td>
+                  <td>在约束条件下求解方案；人工审批边界与执行 Action 待确认。</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section class="section">
+            <h2>先填四个治理字段</h2>
+            <div class="fields">
+              <div class="field">
+                <h3>能力边界</h3>
+                <p>ISS-LRM、通用 LLM、预测、优化、小模型各自能做什么？待确认。</p>
+              </div>
+              <div class="field">
+                <h3>数据与部署</h3>
+                <p>部署位置、数据使用范围、隔离与日志留存要求。待确认。</p>
+              </div>
+              <div class="field">
+                <h3>计量口径</h3>
+                <p>调用次数、Token、GPU 时间、实例或业务能力包，候选并列。</p>
+              </div>
+              <div class="field">
+                <h3>成本回流</h3>
+                <p>业务线、区域、模型等级或 Skill 的分摊维度；回流 ISS Dashboard。</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="bottomline">
+          <section class="section">
+            <h2>质量与采用必须一起看</h2>
+            <p>建议把 Adoption、响应、错误、人工介入、单位业务价值与调用成本放在同一反馈环；不写增长数字，不承诺定价。</p>
+            <p>可在 Dashboard 观察模型路由变化，但字段、刷新频率与 Owner 仍需确认。</p>
+          </section>
+          <section class="section caution">
+            <h2>会后决策项</h2>
+            <p>Skill-based JEV Harness 的正式名称、JEV含义与第一阶段边界；ISS Skill-based Model 的目标架构、Skill Owner、目录和治理规则；Hollis Phase I / II 的时间、交付物与决策门。</p>
+            <p>“编辑部”含义与是否进入 Demo 未确认，不纳入正式案例。</p>
+          </section>
+        </div>
+      </div>
+      <footer class="footer">
+        <span><strong>讨论问题 / 预期产出</strong> 用什么单位把模型成本与业务能力连接，而不把价格假设当事实？产出：路由规则、计量候选、质量证据与会后决策 Owner。</span>
+        <span>37 / 40</span>
+      </footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

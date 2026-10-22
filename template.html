@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<style>.sheet{overflow:clip}.controls{min-width:0}.toolbar{width:100%}</style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="面向联想各部门领导的 AI Accelerator 业务价值讨论材料：会前简版、会上详版与会后 Markdown 资料。">
+<title>AI Accelerator · 会前、会上、会后联动阅读</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{font-family:"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;background:#f7f7f9;color:#1a1a1a;scroll-padding-top:76px}button,select{font:inherit;color:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,a:focus-visible{outline:2px solid #8baeae;outline-offset:3px}.toolbar{position:sticky;top:0;z-index:100;min-height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 16px;border-bottom:1px solid #d1d1d6;background:#f7f7f9}.toolbar-brand{font-size:13px;font-weight:700;white-space:nowrap}.toolbar-brand small{font-size:11px;display:block;font-weight:400;color:#8e8e93;padding-top:3px}.controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}.control{border:1px solid #d1d1d6;border-radius:4px;background:transparent;min-height:31px;padding:4px 8px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.control[disabled]{opacity:.4;cursor:default}.modes{display:flex;align-items:center;border:1px solid #d1d1d6;border-radius:4px}.mode-button{background:transparent;min-height:30px;padding:5px 9px;border:0;font-size:12px;white-space:nowrap}.mode-button+button{border-left:1px solid #d1d1d6}.mode-button[aria-pressed="true"]{font-weight:650;background:#e8eeee;color:#1a1a1a}.page-select{width:169px;max-width:26vw}.chapter-select{width:109px}.viewer{width:100%;padding-top:14px}.sheet{margin:0 auto 18px;position:relative;border-bottom:1px solid #d1d1d6;scroll-margin-top:78px;background:#f7f7f9}.slide-frame{display:block;border:0;transform-origin:top left;background:#f7f7f9}.viewer-rail{position:fixed;z-index:25;top:78px;bottom:0;left:0;width:240px;border-right:1px solid #d1d1d6;background:#f7f7f9;padding:20px 20px;display:flex;flex-direction:column;gap:15px;overflow-y:auto}.rail-brand{font-size:28px;font-weight:800;letter-spacing:-1px}.rail-kicker{font-size:11px;letter-spacing:1px;line-height:1.6;color:#8e8e93}.rail-chapters{display:flex;flex-direction:column;gap:5px;padding-top:8px}.rail-chapter{display:flex;align-items:center;gap:10px;text-align:left;background:transparent;border:0;border-radius:3px;padding:8px 0;min-height:36px;font-size:16px;color:#8e8e93;flex-shrink:0}.rail-chapter .no{font-family:monospace;width:17px;flex-shrink:0}.rail-chapter[aria-current="true"]{font-weight:700;color:#1a1a1a}.rail-chapter[aria-current="true"] .no{color:#8baeae}.rail-counter{font-size:12px;color:#4a4a4d;border-top:1px solid #d1d1d6;padding-top:10px;line-height:1.7}.rail-footer{margin-top:auto;font-size:11px;line-height:1.8;color:#8e8e93}.rail-connection{border-top:1px solid #d1d1d6;padding-top:10px;display:flex;flex-direction:column;gap:6px}.rail-connection button{justify-content:flex-start;text-align:left;font-size:11px;line-height:1.4}.bottom{max-width:950px;margin:20px auto;padding:0 22px 25px;font-size:13px;line-height:1.7;color:#8e8e93}.sr-only{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}.noscript{margin:30px;font-size:18px}.index-hidden .viewer-rail{display:none}
+@media(max-width:1100px){.toolbar{flex-wrap:wrap;justify-content:center;gap:6px}.toolbar-brand small{display:none}.toolbar-brand{font-size:12px}.controls{justify-content:center}.page-select{width:148px}.viewer-rail{padding-left:15px;padding-right:13px}.rail-chapter{font-size:14px}.rail-brand{font-size:24px}}
+@media(max-width:759px){.toolbar{padding:7px 8px;gap:5px}.toolbar-brand{display:none}.controls{gap:5px}.control{min-height:28px;padding-left:6px;padding-right:6px;font-size:11px}.mode-button{font-size:11px;padding-left:7px;padding-right:7px;min-height:28px}.page-select{width:131px;max-width:38vw}.chapter-select{width:93px}.viewer-rail{padding:13px 9px;gap:10px}.rail-brand{font-size:21px}.rail-kicker{font-size:9px;letter-spacing:.5px}.rail-chapters{gap:3px;padding-top:4px}.rail-chapter{font-size:12px;gap:6px;min-height:30px;padding:6px 0}.rail-chapter .no{width:12px}.rail-counter{font-size:10px}.rail-footer{display:none}.rail-connection button{font-size:10px;padding-left:4px;padding-right:4px}.viewer{padding-top:10px}.sheet{margin-bottom:10px}.bottom{font-size:12px}}
+@media print{.toolbar,.viewer-rail,.bottom{display:none}.viewer{padding-top:0}.sheet{break-after:page;margin-bottom:0}}
+</style>
+</head>
+<body>
+<header class="toolbar">
+ <div class="toolbar-brand">AI Accelerator<small>联想各部门领导 · 业务价值讨论</small></div>
+ <div class="controls">
+  <button id="toggle-index" type="button" class="control" aria-controls="viewer-rail" aria-expanded="true">收起目录</button>
+  <div class="modes" aria-label="会前与会上材料"><button id="view-summary" class="mode-button" type="button" aria-pressed="false">会前简版 · 10页</button><button id="view-detail" class="mode-button" type="button" aria-pressed="false">会上详版 · 40页</button></div>
+  <button id="download-md" type="button" class="control">会后 MD ↓</button>
+  <label for="chapter-select" class="sr-only">MD 章节</label><select id="chapter-select" class="control chapter-select" title="按 MD 章节跳转"></select>
+  <button id="previous" class="control" type="button" title="上一页">←</button>
+  <label for="page-select" class="sr-only">页面</label><select id="page-select" class="control page-select" title="选择页面"></select>
+  <button id="next" class="control" type="button" title="下一页">→</button><button id="fullscreen" class="control" type="button" title="F 全屏">全屏</button>
+ </div>
+</header>
+<aside id="viewer-rail" class="viewer-rail" aria-label="MD 0–7 章节目录">
+ <div class="rail-brand">item</div><div id="rail-kicker" class="rail-kicker">BUSINESS VALUE<br>会前 · 会上 · 会后</div>
+ <nav id="rail-chapters" class="rail-chapters">
+  <button class="rail-chapter" data-chapter="0" type="button"><span class="no">0</span><span>Why · 为什么现在</span></button>
+  <button class="rail-chapter" data-chapter="1" type="button"><span class="no">1</span><span>总体架构</span></button>
+  <button class="rail-chapter" data-chapter="2" type="button"><span class="no">2</span><span>七个案例</span></button>
+  <button class="rail-chapter" data-chapter="3" type="button"><span class="no">3</span><span>能力底座</span></button>
+  <button class="rail-chapter" data-chapter="4" type="button"><span class="no">4</span><span>业务工具</span></button>
+  <button class="rail-chapter" data-chapter="5" type="button"><span class="no">5</span><span>Ontology</span></button>
+  <button class="rail-chapter" data-chapter="6" type="button"><span class="no">6</span><span>合作计划</span></button>
+  <button class="rail-chapter" data-chapter="7" type="button"><span class="no">7</span><span>决策收敛</span></button>
+ </nav>
+ <div id="rail-counter" class="rail-counter" aria-live="polite">MD 0–7 · 章节索引</div>
+ <div class="rail-connection"><button id="go-related" type="button" class="control">查看同章详版 →</button><button id="rail-md" type="button" class="control">会后完整 MD ↓</button></div>
+ <div class="rail-footer">Item × ISS Biz Team<br>× COO AI Team<br>Hero Cases → Joint Product<br>同一章节，不同阅读深度</div>
+</aside>
+<main id="viewer" class="viewer" aria-label="演示材料"></main>
+<div id="bottom" class="bottom">会前阅读简版建立共同业务主线；会上使用详版展开七个案例与讨论；会后 MD 留存完整内容。尚未确认的事项仍标为待确认，不视为已发生的会议决策。</div>
+<noscript><p class="noscript">请启用 JavaScript 以浏览完整演示。左侧 MD0–7 目录保留；代码包中的 slides 与 summary-slides 可独立逐页打开。</p></noscript>
+<script id="deck-data" type="application/json">__DECK_DATA__</script>
+<script>
+'use strict';
+(function(){
+ const data=JSON.parse(document.getElementById('deck-data').textContent);
+ const viewer=document.getElementById('viewer'),rail=document.getElementById('viewer-rail');
+ const pageSelect=document.getElementById('page-select'),chapterSelect=document.getElementById('chapter-select');
+ const previous=document.getElementById('previous'),next=document.getElementById('next');
+ const summaryButton=document.getElementById('view-summary'),detailButton=document.getElementById('view-detail');
+ const railButtons=Array.from(document.querySelectorAll('#rail-chapters [data-chapter]'));
+ const modes=data.decks;
+ const defaultMode='__DEFAULT_MODE__';
+ let mode=defaultMode,pages=[],sheets=[],frames=[],chapterFirst=[],active=0,scale=1,compact=false,indexOpen=true,scheduled=false;
+ const pad=n=>String(n).padStart(2,'0');
+ data.chapters.forEach((name,chapter)=>{const option=document.createElement('option');option.value=chapter;option.textContent=chapter+' · '+name;chapterSelect.appendChild(option)});
+ railButtons.forEach(button=>button.addEventListener('click',()=>goTo(chapterFirst[Number(button.dataset.chapter)])));
+ function currentChapter(){return pages[active]?pages[active].chapter:0}
+ function updateHash(){try{history.replaceState(null,'','#'+mode+'-p-'+(active+1))}catch(e){}}
+ function setActive(index,hash){
+  active=Math.max(0,Math.min(pages.length-1,index));const page=pages[active];if(!page)return;
+  pageSelect.value=String(active);chapterSelect.value=String(page.chapter);previous.disabled=active===0;next.disabled=active===pages.length-1;
+  railButtons.forEach(button=>button.setAttribute('aria-current',String(Number(button.dataset.chapter)===page.chapter)));
+  document.getElementById('rail-counter').textContent=(mode==='summary'?'会前简版':'会上详版')+' '+pad(active+1)+' / '+pages.length+'\nMD §'+page.ref;
+  document.getElementById('go-related').textContent=mode==='summary'?'查看同章详版 →':'返回同章简版 →';
+  document.title=(mode==='summary'?'会前简版':'会上详版')+' · '+pad(active+1)+' / '+pages.length+' · '+page.title;
+  if(hash)updateHash();
+ }
+ function goTo(index){
+  if(!sheets.length)return;const i=Math.max(0,Math.min(pages.length-1,Number(index)||0));setActive(i,true);
+  const toolbarHeight=document.querySelector('.toolbar').getBoundingClientRect().height;
+  window.scrollTo({top:Math.max(0,window.scrollY+sheets[i].getBoundingClientRect().top-toolbarHeight-14),behavior:'auto'});
+ }
+ function safeUrl(raw){if(!raw)return null;try{const url=new URL(raw,location.href);return ['http:','https:','file:','blob:','data:'].includes(url.protocol)?url.href:null}catch(e){return null}}
+ function attachVideos(doc){
+  doc.querySelectorAll('[data-video-slot]').forEach(slot=>{const config=data.videos[slot.dataset.videoSlot];if(!config||!config.src)return;const url=safeUrl(config.src);if(!url)return;const video=doc.createElement('video');video.controls=true;video.preload='metadata';video.playsInline=true;video.src=url;video.style.cssText='width:100%;height:100%;object-fit:contain;background:#1a1a1a;display:block';if(config.poster){const poster=safeUrl(config.poster);if(poster)video.poster=poster}video.setAttribute('aria-label',config.title||'Demo 视频');slot.replaceChildren(video);slot.style.gap='0'});
+ }
+ function styleFrame(frame){
+  try{const doc=frame.contentDocument;if(!doc||!doc.querySelector('.slide-container'))return;let style=doc.getElementById('linked-viewer-style');if(!style){style=doc.createElement('style');style.id='linked-viewer-style';doc.head.appendChild(style)}
+   style.textContent=compact?'.rail{display:none!important}.frame{grid-template-columns:0px 1040px!important}.main{grid-column:2!important}.slide-container{width:1040px!important}':'.rail{visibility:hidden!important}';
+  }catch(e){}
+ }
+ function render(newMode){
+  mode=newMode;pages=modes[mode].pages;active=0;viewer.replaceChildren();pageSelect.replaceChildren();sheets=[];frames=[];
+  chapterFirst=data.chapters.map((_,chapter)=>Math.max(0,pages.findIndex(page=>page.chapter===chapter)));
+  summaryButton.setAttribute('aria-pressed',String(mode==='summary'));detailButton.setAttribute('aria-pressed',String(mode==='detail'));
+  viewer.setAttribute('aria-label',mode==='summary'?'会前简版 · 10页':'会上详版 · 40页');
+  pages.forEach((page,index)=>{
+   const option=document.createElement('option');option.value=index;option.textContent=pad(index+1)+' / '+pages.length+' · '+page.title;pageSelect.appendChild(option);
+   const sheet=document.createElement('section');sheet.className='sheet';sheet.id=mode+'-p-'+(index+1);sheet.setAttribute('aria-label','MD §'+page.ref+' · '+page.title);
+   const frame=document.createElement('iframe');frame.className='slide-frame';frame.title=page.title+'（MD §'+page.ref+'）';frame.loading=index<3?'eager':'lazy';
+   frame.addEventListener('load',()=>{styleFrame(frame);try{const doc=frame.contentDocument;attachVideos(doc);doc.addEventListener('keydown',handleKeys)}catch(e){}});
+   frame.srcdoc=page.html;sheet.appendChild(frame);viewer.appendChild(sheet);sheets.push(sheet);frames.push(frame);
+  });
+  document.getElementById('bottom').textContent=mode==='summary'?'会前简版面向联想各部门领导，帮助快速理解业务价值、协同边界与需共同确认的事项。点击“查看同章详版”，可进入同一 MD 章节的案例和讨论。会后 MD 保留完整内容，待确认事项不代表已形成会议决议。':'会上详版保留40页完整内容和七个Demo视频接入区。点击“返回同章简版”回到该章总览；“会后MD”可下载完整论证与待确认事项。视频当前仍为待接入素材。';
+  sizeAll();setActive(0,false);
+ }
+ function switchView(newMode){if(newMode===mode)return;const chapter=currentChapter();render(newMode);goTo(chapterFirst[chapter])}
+ function sizeAll(){
+  const width=window.innerWidth,narrow=width<760;compact=narrow||!indexOpen;
+  let mobileRail=0;if(narrow&&indexOpen)mobileRail=Math.min(150,Math.max(112,Math.round(width*.3)));
+  viewer.style.marginLeft=mobileRail+'px';viewer.style.width='calc(100% - '+mobileRail+'px)';
+  const available=Math.min(width-mobileRail,1280),base=compact?1040:1280;scale=available/base;
+  sheets.forEach(sheet=>{sheet.style.width=available+'px';sheet.style.height=(720*scale)+'px'});
+  frames.forEach(frame=>{frame.style.width=base+'px';frame.style.height='720px';frame.style.transform='scale('+scale+')';styleFrame(frame)});
+  rail.style.left=(narrow?0:Math.max(0,(width-1280)/2))+'px';rail.style.width=(narrow?mobileRail:240*scale)+'px';
+  const toolbarHeight=document.querySelector('.toolbar').getBoundingClientRect().height;rail.style.top=(toolbarHeight+14)+'px';
+  viewer.style.paddingBottom=Math.max(0,window.innerHeight-toolbarHeight-720*scale)+'px';
+  sheets.forEach(sheet=>sheet.style.scrollMarginTop=(toolbarHeight+14)+'px');
+ }
+ function detectActive(){
+  scheduled=false;const top=document.querySelector('.toolbar').getBoundingClientRect().bottom+18;let closest=active,score=Infinity;
+  sheets.forEach((sheet,i)=>{const r=sheet.getBoundingClientRect(),distance=Math.abs(r.top-top);if(r.bottom>top&&distance<score){closest=i;score=distance}});
+  if(closest!==active)setActive(closest,true);
+ }
+ function handleKeys(event){
+  if(event.ctrlKey||event.metaKey||event.altKey||event.defaultPrevented)return;
+  const target=event.target;if(target&&target.closest&&target.closest('input,textarea,select,[contenteditable="true"],video'))return;
+  if(event.key===' '&&target&&target.closest&&target.closest('button,a'))return;
+  if(['ArrowRight','ArrowDown','PageDown',' '].includes(event.key)){event.preventDefault();goTo(active+1)}
+  else if(['ArrowLeft','ArrowUp','PageUp'].includes(event.key)){event.preventDefault();goTo(active-1)}
+  else if(event.key==='Home'){event.preventDefault();goTo(0)}else if(event.key==='End'){event.preventDefault();goTo(pages.length-1)}
+  else if(event.key==='f'||event.key==='F'){event.preventDefault();toggleFullscreen()}
+ }
+ function toggleFullscreen(){if(!document.fullscreenEnabled){document.getElementById('fullscreen').textContent='浏览器不支持全屏';return}const action=document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen();if(action&&action.catch)action.catch(()=>{document.getElementById('fullscreen').textContent='请使用浏览器全屏'})}
+ function downloadMarkdown(){const url=URL.createObjectURL(new Blob([data.markdown],{type:'text/markdown;charset=utf-8'}));const anchor=document.createElement('a');anchor.href=url;anchor.download='AI_Accelerator_会后完整阅读资料.md';anchor.click();setTimeout(()=>URL.revokeObjectURL(url),3000)}
+ document.getElementById('download-md').addEventListener('click',downloadMarkdown);document.getElementById('rail-md').addEventListener('click',downloadMarkdown);
+ summaryButton.addEventListener('click',()=>switchView('summary'));detailButton.addEventListener('click',()=>switchView('detail'));document.getElementById('go-related').addEventListener('click',()=>switchView(mode==='summary'?'detail':'summary'));
+ document.getElementById('toggle-index').addEventListener('click',()=>{indexOpen=!indexOpen;document.documentElement.classList.toggle('index-hidden',!indexOpen);document.getElementById('toggle-index').setAttribute('aria-expanded',String(indexOpen));document.getElementById('toggle-index').textContent=indexOpen?'收起目录':'展开目录';sizeAll();goTo(active)});
+ previous.addEventListener('click',()=>goTo(active-1));next.addEventListener('click',()=>goTo(active+1));pageSelect.addEventListener('change',()=>goTo(Number(pageSelect.value)));chapterSelect.addEventListener('change',()=>goTo(chapterFirst[Number(chapterSelect.value)]));
+ document.getElementById('fullscreen').addEventListener('click',toggleFullscreen);document.addEventListener('fullscreenchange',()=>{document.getElementById('fullscreen').textContent=document.fullscreenElement?'退出全屏':'全屏';sizeAll()});document.addEventListener('keydown',handleKeys);
+ window.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(detectActive)}},{passive:true});window.addEventListener('resize',sizeAll);
+ function readRoute(){
+  const named=location.hash.match(/^#(summary|detail)-p-(\d+)$/);if(named){if(named[1]!==mode)render(named[1]);goTo(Number(named[2])-1);return}
+  const chapter=location.hash.match(/^#(?:chapter|md)-(\d)$/);if(chapter){goTo(chapterFirst[Number(chapter[1])]);return}
+  const page=location.hash.match(/^#p-(\d+)$/);if(page)goTo(Number(page[1])-1);
+ }
+ const viewParam=new URLSearchParams(location.search).get('view');if(viewParam==='summary'||viewParam==='detail')mode=viewParam;
+ render(mode);if(location.hash)requestAnimationFrame(readRoute);
+ window.addEventListener('hashchange',readRoute);
+ window.deckViewer={goTo,index:()=>active,pageCount:()=>pages.length,mode:()=>mode,chapter:currentChapter,switchView,downloadMarkdown};
+})();
+</script>
+</body>
+</html>

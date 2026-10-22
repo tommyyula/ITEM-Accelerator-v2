@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+ *{margin:0;padding:0;box-sizing:border-box}
+ .slide-container{
+   width:1280px;
+   min-height:720px;
+  background:#F7F7F9;
+  color:#4A4A4D;
+  font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;
+   display:flex;
+   flex-direction:column;
+}
+ .frame{
+   display:grid;
+   grid-template-columns:240px 1040px;
+   flex:1;
+   min-height:720px;
+ }
+.rail{
+  border-right:1px solid #D1D1D6;
+  display:flex;
+  flex-direction:column;
+  padding-top:18px;
+  padding-left:22px;
+  padding-right:18px;
+  gap:14px;
+}
+.brand{font-size:26px;font-weight:800;letter-spacing:-1px;color:#1A1A1A}
+.rail-kicker{font-size:11px;letter-spacing:2px;color:#8E8E93}
+.chapters{display:flex;flex-direction:column;gap:12px;padding-top:12px}
+.chapter{font-size:15px;display:flex;gap:10px;color:#8E8E93;line-height:1.3}
+.chapter .no{width:22px;font-family:monospace}
+.chapter.active{color:#1A1A1A;font-weight:700}
+.chapter.active .no{color:#8BAEAE}
+.rail-bottom{margin-top:auto;margin-bottom:18px;font-size:12px;line-height:1.6;color:#8E8E93}
+.main{
+  display:flex;
+  flex-direction:column;
+  padding-top:16px;
+  padding-left:36px;
+  padding-right:44px;
+  min-width:0;
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #D1D1D6;
+  min-height:36px;
+  font-size:12px;
+  letter-spacing:.5px;
+  color:#8E8E93;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid #D1D1D6;
+  border-radius:4px;
+  padding-top:2px;
+  padding-left:8px;
+  padding-right:8px;
+  min-height:22px;
+  font-size:11px;
+  line-height:1.4;
+  color:#4A4A4D;
+}
+.top .ref{color:#8BAEAE;font-weight:600}
+.heading{padding-top:14px}
+h1{font-size:30px;line-height:1.3;color:#1A1A1A;font-weight:700;letter-spacing:-.4px}
+.lead{font-size:15px;line-height:1.45;color:#8E8E93;padding-top:8px}
+.content{
+   display:flex;
+   flex-direction:column;
+   flex:1;
+   justify-content:flex-start;
+   gap:12px;
+   padding-top:12px;
+}
+h2{font-size:20px;line-height:1.35;color:#1A1A1A;font-weight:650}
+h3{font-size:17px;line-height:1.35;color:#1A1A1A}
+p,li{font-size:15px;line-height:1.45}
+.small{font-size:13px;line-height:1.45;color:#8E8E93}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.section{border-top:1px solid #D1D1D6;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.number{font-family:monospace;font-size:26px;color:#8BAEAE}
+.line{border-top:1px solid #D1D1D6}
+ .callout{border-top:1px solid #D1D1D6;border-bottom:1px solid #D1D1D6;padding-top:10px;min-height:48px;display:flex;align-items:flex-start;gap:12px}
+.footer{
+  border-top:1px solid #D1D1D6;
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  margin-top:12px;
+  margin-bottom:14px;
+  padding-top:10px;
+  font-size:12px;
+  line-height:1.5;
+}
+.footer strong{color:#1A1A1A;font-weight:650}
+.route{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;align-items:stretch;gap:8px}
+.route-step{border-top:2px solid #8BAEAE;padding-top:8px;display:flex;flex-direction:column;gap:6px}
+.route-step:nth-child(3){border-color:#B4ACBE}.route-step:nth-child(5){border-color:#E2D9A5}
+.arrow{font-size:20px;color:#8E8E93;align-self:center;text-align:center}
+.role{border-top:1px solid #D1D1D6;padding-top:10px}
+.role strong{color:#1A1A1A;font-weight:650}
+.output{border-left:3px solid #E2D9A5;padding-left:12px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="frame">
+    <aside class="rail">
+      <div class="brand">Item</div>
+      <div class="rail-kicker">BUSINESS VALUE WORKSHOP</div>
+      <div class="chapters">
+        <div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div>
+        <div class="chapter"><span class="no">1</span><span>总体架构</span></div>
+        <div class="chapter"><span class="no">2</span><span>七个案例</span></div>
+        <div class="chapter"><span class="no">3</span><span>能力底座</span></div>
+        <div class="chapter"><span class="no">4</span><span>业务工具</span></div>
+        <div class="chapter active"><span class="no">5</span><span>Ontology</span></div>
+        <div class="chapter"><span class="no">6</span><span>合作计划</span></div>
+        <div class="chapter"><span class="no">7</span><span>决策收敛</span></div>
+      </div>
+      <div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div>
+    </aside>
+    <main class="main">
+      <header class="top"><span class="ref">MD §5.1–5.3</span><span class="badge">章节综述 · 建议 5 分钟</span></header>
+      <div class="heading">
+        <h1>5. Ontology Studio：从知识挖掘开始的第一环</h1>
+        <p class="lead">先把事实、事理与行动组织成统一业务语义，再让 Data、Model、Agent、Dynamic Form 与 Action 进入同一条可治理链路。</p>
+      </div>
+      <div class="content">
+        <div class="route">
+          <div class="route-step"><span class="number">01</span><h3>挖掘事实</h3><p>识别业务对象、状态与数据来源。Ontology 让 Data Hub 不止是连接。</p></div>
+          <div class="arrow">→</div>
+          <div class="route-step"><span class="number">02</span><h3>定义事理</h3><p>表达关系、规则、例外和优先级。Model Hub 不再只是模型集合。</p></div>
+          <div class="arrow">→</div>
+          <div class="route-step"><span class="number">03</span><h3>约束行动</h3><p>明确可自动执行与须人工确认的 Action，形成版本、测试和反馈闭环。</p></div>
+        </div>
+        <div class="two">
+          <section class="section">
+            <h2>为什么是第一环</h2>
+            <p>没有统一语义，Agent 只能依赖个人 Prompt，Dynamic Form 只能生成页面，Action 也难以判断边界。</p>
+            <p class="small">本章结论：Ontology 不是名词清单，而是业务知识到可执行流程的共同起点。</p>
+          </section>
+          <section class="section">
+            <h2>共建不等于单方录入</h2>
+            <p>业务 Owner 讲目标与例外；DT / Senior User 梳理系统关系；FDE 补充现场规则；Item 负责方法、工具与产品化；IT / Security 确认权限和生产要求。</p>
+            <p class="small">角色边界与 Owner 仍需在工作坊现场确认。</p>
+          </section>
+        </div>
+        <div class="callout"><span class="badge">本章产出</span><div class="output"><p><strong>一张可讨论的初版业务模型范围：</strong>对象、关系、规则、Action、数据来源、风险等级、Owner 与版本反馈入口。以 BO / Customer Promise 为工作坊推演主线，不声称已有完整模型。</p></div></div>
+      </div>
+      <footer class="footer"><span><strong>讨论/产出</strong> 哪个业务对象最需要先统一语义？现场形成“首批 Ontology 范围 + 角色分工 + 下一验证门”。</span><span>30 / 40</span></footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

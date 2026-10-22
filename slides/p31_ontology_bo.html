@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{width:1280px;min-height:720px;background:#F7F7F9;color:#4A4A4D;font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;display:flex;flex-direction:column}
+.frame{display:grid;grid-template-columns:240px 1040px;flex:1;min-height:720px}
+.rail{border-right:1px solid #D1D1D6;display:flex;flex-direction:column;padding-top:34px;padding-left:28px;padding-right:24px;gap:21px}
+.brand{font-size:29px;font-weight:800;letter-spacing:-1px;color:#1A1A1A}.rail-kicker{font-size:12px;letter-spacing:2px;color:#8E8E93}.chapters{display:flex;flex-direction:column;gap:20px;padding-top:25px}.chapter{font-size:17px;display:flex;gap:12px;color:#8E8E93;line-height:1.4}.chapter .no{width:22px;font-family:monospace}.chapter.active{color:#1A1A1A;font-weight:700}.chapter.active .no{color:#8BAEAE}.rail-bottom{margin-top:auto;margin-bottom:26px;font-size:13px;line-height:1.8;color:#8E8E93}
+.main{display:flex;flex-direction:column;padding-top:28px;padding-left:40px;padding-right:60px;min-width:0}.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #D1D1D6;min-height:42px;font-size:13px;letter-spacing:.5px;color:#8E8E93}.badge{display:inline-flex;align-items:center;border:1px solid #D1D1D6;border-radius:4px;padding-top:3px;padding-left:9px;padding-right:9px;min-height:25px;font-size:12px;line-height:1.4;color:#4A4A4D}.top .ref{color:#8BAEAE;font-weight:600}.heading{padding-top:24px}h1{font-size:34px;line-height:1.35;color:#1A1A1A;font-weight:700;letter-spacing:-.5px}.lead{font-size:18px;line-height:1.55;color:#8E8E93;padding-top:10px}.content{display:flex;flex-direction:column;flex:1;justify-content:space-evenly;gap:15px;padding-top:20px}h2{font-size:22px;line-height:1.4;color:#1A1A1A;font-weight:650}h3{font-size:18px;line-height:1.4;color:#1A1A1A}p,li{font-size:17px;line-height:1.5}.small{font-size:14px;line-height:1.45;color:#8E8E93}.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.section{border-top:1px solid #D1D1D6;padding-top:11px;display:flex;flex-direction:column;gap:7px}.number{font-family:monospace;font-size:24px;color:#8BAEAE}.footer{border-top:1px solid #D1D1D6;display:flex;justify-content:space-between;gap:20px;margin-top:18px;margin-bottom:22px;padding-top:12px;font-size:13px;line-height:1.6}.footer strong{color:#1A1A1A;font-weight:650}
+.objects{border-top:2px solid #8BAEAE;padding-top:11px;display:grid;grid-template-columns:180px 1fr 180px;gap:12px;align-items:center}.object-list{display:flex;flex-wrap:wrap;gap:6px}.object-list span{border:1px solid #D1D1D6;border-radius:4px;padding:4px 8px;font-size:14px;color:#1A1A1A}.relation{text-align:center;color:#8E8E93;font-size:15px;line-height:1.45}.rule{border-left:3px solid #B4ACBE;padding-left:12px}.action{border-left:3px solid #E2D9A5;padding-left:12px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;border-top:1px solid #D1D1D6;padding-top:11px}.step{border-top:1px solid #D1D1D6;padding-top:7px}.step b{font-family:monospace;color:#8BAEAE;font-size:15px}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="frame">
+    <aside class="rail">
+      <div class="brand">Item</div><div class="rail-kicker">BUSINESS VALUE WORKSHOP</div>
+      <div class="chapters"><div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div><div class="chapter"><span class="no">1</span><span>总体架构</span></div><div class="chapter"><span class="no">2</span><span>七个案例</span></div><div class="chapter"><span class="no">3</span><span>能力底座</span></div><div class="chapter"><span class="no">4</span><span>业务工具</span></div><div class="chapter active"><span class="no">5</span><span>Ontology</span></div><div class="chapter"><span class="no">6</span><span>合作计划</span></div><div class="chapter"><span class="no">7</span><span>决策收敛</span></div></div>
+      <div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div>
+    </aside>
+    <main class="main">
+      <header class="top"><span class="ref">MD §5.3</span><span class="badge">共建内容页 · 建议 10 分钟</span></header>
+      <div class="heading"><h1>5.3 用 BO 的对象、关系、规则和 Action 建模</h1><p class="lead">BO 的关键不是回答订单状态，而是解释缺料如何影响维修与 Customer Promise，并把下一步行动置于可控边界内。</p></div>
+      <div class="content">
+        <div class="objects">
+          <div><h2>对象层</h2><p class="small">工作坊推演范围</p></div>
+          <div class="object-list"><span>Customer</span><span>Order / Back Order</span><span>Part / Substitute Part</span><span>Inventory</span><span>Repair</span><span>Shipment / ETA</span><span>Service Promise</span><span>Priority</span></div>
+          <div class="relation">对象不是孤立名词<br>要说明状态与影响</div>
+        </div>
+        <div class="three">
+          <section class="section"><h3>关系与状态</h3><p>工作坊推演：缺料关联 Repair，Repair 进度影响 Shipment 与 ETA，ETA 风险进一步影响 Service Promise；每个关系都要有来源与更新时间。</p></section>
+          <section class="section rule"><h3>规则与例外</h3><p>梳理优先级、替换、库存和运输规则。规则冲突、数据缺失、过期状态必须进入例外路径，不能由模型自行补齐。</p></section>
+          <section class="section action"><h3>Action 边界</h3><p>查询、通知、状态同步可讨论为低风险；料件替换、承诺变更等高风险动作须权限、人工确认与日志。</p></section>
+        </div>
+        <div class="steps">
+          <div class="step"><b>01–02 定义</b><p>业务目标、客户承诺、对象清单</p></div>
+          <div class="step"><b>03–05 规则</b><p>关系、状态、优先级与自动动作</p></div>
+          <div class="step"><b>06–08 接入测试</b><p>人工边界、UKM/订单/库存/物流/维修；真实但脱敏数据沙盒</p></div>
+          <div class="step"><b>09–10 反馈发布</b><p>错误与缺失回流 Ontology Owner，版本管理后发布</p></div>
+        </div>
+        <p class="small">待确认：UKM、订单、库存、物流和维修的接口范围；哪些 Action 可真实执行、哪些只能模拟；Ontology Owner 与正式发布门。</p>
+      </div>
+      <footer class="footer"><span><strong>讨论/产出</strong> 哪条关系或规则最可能改变 Customer Promise？产出对象—关系—规则—Action 草案及待确认清单。</span><span>31 / 40</span></footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{width:1280px;height:720px;background:#F7F7F9;color:#4A4A4D;display:flex;flex-direction:column;border:0}
+.frame{display:grid;grid-template-columns:220px 1fr;height:100%}
+/* Rail (left column) */
+.rail{border-right:1px solid #D1D1D6;display:flex;flex-direction:column;padding-top:16px;padding-left:16px;padding-right:14px;gap:12px}
+.brand{font-size:20px;font-weight:800;letter-spacing:-0.6px;color:#1A1A1A}
+.rail-kicker{font-size:11px;letter-spacing:1.6px;color:#8E8E93}
+.chapters{display:flex;flex-direction:column;gap:10px;padding-top:10px}
+.chapter{font-size:14px;display:flex;gap:10px;color:#8E8E93;line-height:1.3}
+.chapter .no{width:18px;font-family:monospace}
+.chapter.active{color:#1A1A1A;font-weight:700}
+.chapter.active .no{color:#8BAEAE}
+.rail-bottom{margin-top:auto;margin-bottom:14px;font-size:12px;line-height:1.5;color:#8E8E93}
+/* Main (right column) */
+.main{display:flex;flex-direction:column;padding-top:14px;padding-left:26px;padding-right:30px;min-width:0;height:100%}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #D1D1D6;height:36px;font-size:12px;letter-spacing:.4px;color:#8E8E93}
+.badge{display:inline-flex;align-items:center;border:1px solid #D1D1D6;border-radius:4px;padding:3px 8px;height:26px;font-size:12px;line-height:1.2;color:#4A4A4D}
+.top .ref{color:#8BAEAE;font-weight:600}
+.heading{padding-top:12px}
+h1{font-size:26px;line-height:1.25;color:#1A1A1A;font-weight:700;letter-spacing:-.4px;margin-bottom:6px}
+.lead{font-size:14px;line-height:1.45;color:#8E8E93;padding-top:4px;margin-bottom:6px}
+.content{display:flex;flex-direction:column;flex:1;justify-content:space-between;gap:10px;padding-top:10px}
+h2{font-size:16px;line-height:1.35;color:#1A1A1A;font-weight:650;margin-bottom:6px}
+h3{font-size:15px;line-height:1.35;color:#1A1A1A;margin-bottom:6px}
+p,li{font-size:14px;line-height:1.45;margin:0}
+.small{font-size:12px;line-height:1.45;color:#8E8E93}
+.section{border-top:1px solid #D1D1D6;padding-top:8px;display:flex;flex-direction:column;gap:8px}
+.callout{border-top:1px solid #D1D1D6;border-bottom:1px solid #D1D1D6;padding-top:8px;min-height:40px;display:flex;align-items:flex-start;gap:10px}
+.footer{border-top:1px solid #D1D1D6;display:flex;justify-content:space-between;gap:12px;margin-top:10px;margin-bottom:10px;padding-top:8px;font-size:12px;line-height:1.4}
+.footer strong{color:#1A1A1A;font-weight:650}
+/* Table */
+.table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.35}
+.table th{text-align:left;color:#1A1A1A;font-size:13px;font-weight:650;border-bottom:1px solid #1A1A1A;padding:6px 8px}
+.table td{border-bottom:1px solid #D1D1D6;padding:6px 8px;vertical-align:top}
+.table td:first-child{width:20%;font-weight:650;color:#1A1A1A}
+.table td:nth-child(2){width:44%}
+.table td:nth-child(3){width:36%}
+.pill{display:inline-block;border:1px solid #8BAEAE;border-radius:4px;padding:2px 6px;font-size:12px;margin-right:6px;color:#1A1A1A}
+/* lower split */
+.below{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.split h3{font-size:14px}
+.split p{font-size:13px;line-height:1.4}
+.risk{border-left:3px solid #E2D9A5;padding-left:10px}
+.risk p{font-size:13px;line-height:1.4}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="frame">
+    <aside class="rail">
+      <div class="brand">item</div>
+      <div class="rail-kicker">BUSINESS VALUE WORKSHOP</div>
+      <nav class="chapters">
+        <div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div>
+        <div class="chapter"><span class="no">1</span><span>总体架构</span></div>
+        <div class="chapter"><span class="no">2</span><span>七个案例</span></div>
+        <div class="chapter"><span class="no">3</span><span>能力底座</span></div>
+        <div class="chapter"><span class="no">4</span><span>业务工具</span></div>
+        <div class="chapter"><span class="no">5</span><span>Ontology</span></div>
+        <div class="chapter active"><span class="no">6</span><span>合作计划</span></div>
+        <div class="chapter"><span class="no">7</span><span>决策收敛</span></div>
+      </nav>
+      <div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div>
+    </aside>
+
+    <main class="main">
+      <header class="top">
+        <span class="ref">MD §6.1</span>
+        <span class="badge">能力对齐讨论 · 建议 15 分钟</span>
+      </header>
+
+      <div class="heading">
+        <h1>6.1 Accelerator 提供什么，Item 不重复建设什么</h1>
+        <p class="lead">双方不是竞争平台：Accelerator 负责企业级可复用底座与治理，Item 负责业务落地与产品化，ISS Biz Team 负责真实场景验证。</p>
+      </div>
+
+      <div class="content">
+        <section class="section">
+          <h2>五个横向能力域：从接入到服务化</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Accelerator 能力域</th>
+                <th>对 Item × ISS AI 合作的支撑</th>
+                <th>边界表达 / 待确认字段</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>数据分级互联</td>
+                <td>LUDP、数仓、数据湖、DaaS、数据血缘与业务语义接入，形成可信上下文。</td>
+                <td>数据 Owner、分级标准、接口范围与刷新责任：待确认。</td>
+              </tr>
+              <tr>
+                <td>算力共享</td>
+                <td>GPU as a Service、配额队列、MIG / 分时混部，支撑模型与批量任务。</td>
+                <td>配额申请、优先级、跨团队使用边界：待确认。</td>
+              </tr>
+              <tr>
+                <td>模型复用</td>
+                <td>MaaS 目录、统一模型网关、LoRA、ISS 专域 <span class="pill">ISS-LRM</span>，按任务选择模型。</td>
+                <td>ISS-LRM 能力、部署与数据范围；不在本页承诺质量或价格。</td>
+              </tr>
+              <tr>
+                <td>部署与认证</td>
+                <td>K8S、多租户隔离、统一登录、EA / BIA 认证与共享环境。</td>
+                <td>沙盒到生产的认证门、日志留存与安全责任：待确认。</td>
+              </tr>
+              <tr>
+                <td>智能体服务化</td>
+                <td>沙箱、Runtime 托管、Agent Marketplace、编排与 A2A 互通。</td>
+                <td>Skill / Agent 登记、发现、观测和治理接口：待确认。</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <div class="below">
+          <section class="section">
+            <h2>五横两纵的运营视角</h2>
+            <div class="split">
+              <div>
+                <h3><span class="pill">横向</span>能力层</h3>
+                <p>基础设施与模型服务、数据与知识、模型能力、智能体服务、业务交互生态。</p>
+              </div>
+              <div>
+                <h3><span class="pill">纵向</span>治理层</h3>
+                <p>运营治理与运行观测贯穿目录、权限、版本、质量、成本和反馈。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="section risk">
+            <h2>会议要定的协作边界</h2>
+            <p>Item：场景、体验、Agent 编排、动态表单、Action、产品化。</p>
+            <p>Accelerator：数据、算力、模型服务、部署认证、运行治理。</p>
+            <p>具体支持、接口和责任矩阵仍标“待确认”。</p>
+          </section>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <span><strong>讨论问题 / 预期产出</strong> 哪些能力必须由Accelerator统一治理，哪些可按标准接口接入？产出：五域×责任×接口×认证门的边界表。</span>
+        <span>34 / 40</span>
+      </footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

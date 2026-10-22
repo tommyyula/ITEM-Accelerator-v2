@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{
+  width:1280px;
+  height:720px;
+  background:#F7F7F9;
+  color:#4A4A4D;
+  font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+.frame{
+  display:grid;
+  grid-template-columns:240px 1fr;
+  height:100%;
+  gap:0;
+}
+/* RAIL */
+.rail{
+  border-right:1px solid #D1D1D6;
+  display:flex;
+  flex-direction:column;
+  padding-top:20px;
+  padding-left:20px;
+  padding-right:16px;
+  gap:14px;
+  min-width:240px;
+}
+.brand{font-size:26px;font-weight:800;letter-spacing:-1px;color:#1A1A1A}
+.rail-kicker{font-size:11px;letter-spacing:2px;color:#8E8E93}
+.chapters{display:flex;flex-direction:column;gap:14px;padding-top:12px;overflow:auto}
+.chapter{font-size:15px;display:flex;gap:10px;color:#8E8E93;line-height:1.3;align-items:center}
+.chapter .no{width:20px;font-family:monospace;font-size:13px}
+.chapter.active{color:#1A1A1A;font-weight:700}
+.chapter.active .no{color:#8BAEAE}
+.rail-bottom{margin-top:auto;margin-bottom:18px;font-size:12px;line-height:1.6;color:#8E8E93}
+
+/* MAIN */
+.main{
+  display:flex;
+  flex-direction:column;
+  padding-top:18px;
+  padding-left:32px;
+  padding-right:44px;
+  min-width:0;
+  height:100%;
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #D1D1D6;
+  min-height:36px;
+  font-size:12px;
+  letter-spacing:.4px;
+  color:#8E8E93;
+  padding-bottom:8px;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid #D1D1D6;
+  border-radius:4px;
+  padding-top:2px;
+  padding-left:8px;
+  padding-right:8px;
+  min-height:22px;
+  font-size:11px;
+  line-height:1.3;
+  color:#4A4A4D;
+}
+.top .ref{color:#8BAEAE;font-weight:600}
+.heading{padding-top:14px;padding-bottom:6px}
+h1{font-size:28px;line-height:1.25;color:#1A1A1A;font-weight:700;letter-spacing:-.4px;margin-bottom:6px}
+.lead{font-size:16px;line-height:1.45;color:#8E8E93;padding-top:4px;margin-bottom:4px}
+.content{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  justify-content:flex-start;
+  gap:12px;
+  padding-top:8px;
+  overflow:auto;
+  padding-bottom:8px;
+}
+h2{font-size:20px;line-height:1.35;color:#1A1A1A;font-weight:650;margin-bottom:6px}
+h3{font-size:16px;line-height:1.35;color:#1A1A1A;margin-bottom:6px}
+p,li{font-size:15px;line-height:1.45}
+.small{font-size:13px;line-height:1.35;color:#8E8E93}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:6px}
+.section{border-top:1px solid #D1D1D6;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.number{font-family:monospace;font-size:24px;color:#8BAEAE}
+.table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.35}
+.table th{text-align:left;color:#1A1A1A;font-size:13px;font-weight:650;border-bottom:1px solid #1A1A1A;padding-top:6px;padding-left:8px;padding-right:8px;min-height:24px}
+.table td{border-bottom:1px solid #D1D1D6;padding-top:6px;padding-left:8px;padding-right:8px;vertical-align:top;min-height:28px}
+.callout{border-top:1px solid #D1D1D6;border-bottom:1px solid #D1D1D6;padding-top:8px;min-height:44px;display:flex;align-items:flex-start;gap:10px;padding-bottom:8px}
+.footer{border-top:1px solid #D1D1D6;display:flex;justify-content:space-between;gap:14px;margin-top:12px;margin-bottom:12px;padding-top:8px;font-size:12px;line-height:1.4}
+.footer strong{color:#1A1A1A;font-weight:650}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{border-left:2px solid #8BAEAE;padding-left:11px;min-height:100px;padding-top:6px;padding-bottom:6px}
+.step:nth-child(2){border-left-color:#B4ACBE}
+.step:nth-child(3){border-left-color:#E2D9A5}
+.step:nth-child(4){border-left-color:#1A1A1A}
+.step .number{font-size:20px}
+.step p{font-size:14px;line-height:1.38;padding-top:6px;margin-bottom:4px}
+.micro{font-size:13px;line-height:1.35;color:#8E8E93}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;list-style:none;padding:0}
+.checks li{font-size:14px;line-height:1.35;border-bottom:1px solid #D1D1D6;padding-top:6px;padding-bottom:6px}
+
+/* small adjustments for overflow */
+.chapters::-webkit-scrollbar,
+.content::-webkit-scrollbar{height:6px;width:6px}
+.chapters::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb{background:transparent}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="frame">
+    <aside class="rail">
+      <div class="brand">item</div>
+      <div class="rail-kicker">BUSINESS VALUE WORKSHOP</div>
+      <div class="chapters">
+        <div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div>
+        <div class="chapter"><span class="no">1</span><span>总体架构</span></div>
+        <div class="chapter"><span class="no">2</span><span>七个案例</span></div>
+        <div class="chapter"><span class="no">3</span><span>能力底座</span></div>
+        <div class="chapter active"><span class="no">4</span><span>业务工具</span></div>
+        <div class="chapter"><span class="no">5</span><span>Ontology</span></div>
+        <div class="chapter"><span class="no">6</span><span>合作计划</span></div>
+        <div class="chapter"><span class="no">7</span><span>决策收敛</span></div>
+      </div>
+      <div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div>
+    </aside>
+    <main class="main">
+      <header class="top">
+        <span class="ref">MD §4.1</span>
+        <span class="badge">操作推演与讨论 · 建议 10 分钟</span>
+      </header>
+      <div class="heading">
+        <h1>4.1 ITEMGPT Runtime：目标表达、标准化、后台执行</h1>
+        <p class="lead">Runtime 的价值不是一个聊天入口，而是把业务目标翻译成可复用、可控、可反馈的工作流。</p>
+      </div>
+      <div class="content">
+        <div class="steps">
+          <div class="step">
+            <div class="number">01 / 目标</div>
+            <h3>用业务语言提出任务</h3>
+            <p>例如：生成 WMS 异常表单、解释 BO 原因与 ETA、整理 CEC 记录为 SOP 草稿、提出料件替换建议。</p>
+          </div>
+          <div class="step">
+            <div class="number">02 / 标准化</div>
+            <h3>套用组织约定</h3>
+            <p>模板、标准字段、业务术语、标准输出格式和质量检查，把个人定制变成组织可读的输入。</p>
+          </div>
+          <div class="step">
+            <div class="number">03 / Action</div>
+            <h3>按权限给出下一步</h3>
+            <p>查询、建议与写入分层；低风险动作可自动执行，高风险动作保留业务确认，具体等级待确认。</p>
+          </div>
+          <div class="step">
+            <div class="number">04 / 回流</div>
+            <h3>让后台任务持续运行</h3>
+            <p>状态监控、资料整理、任务派发、通知、同步和异常提醒由 Robotics 机制承接，异常回到人。</p>
+          </div>
+        </div>
+
+        <div class="two">
+          <section class="section">
+            <h2>四个入口，保持同一条标准</h2>
+            <table class="table">
+              <tr><th>业务请求</th><th>Runtime 应追问或校验</th></tr>
+              <tr><td>WMS 异常表单</td><td>订单、料件、位置、异常、照片；确认写回 WMS 的权限与字段。</td></tr>
+              <tr><td>BO 原因与 ETA</td><td>事实来源、时间戳、风险解释；不要把建议当成 Customer Promise。</td></tr>
+              <tr><td>CEC SOP 草稿</td><td>记录上下文、动作、结果；业务 Owner 审核后再发布。</td></tr>
+              <tr><td>料件替换建议</td><td>库存、优先级与运输约束；高风险 Action 需人工确认。</td></tr>
+            </table>
+          </section>
+
+          <section class="section">
+            <h2>后台效率，不等于自动承诺</h2>
+            <ul class="checks">
+              <li>小模型：高频分类和路由</li>
+              <li>规则/模板：稳定流程</li>
+              <li>大模型：复杂理解与解释</li>
+              <li>Ontology：压缩上下文、限定范围</li>
+              <li>缓存：重复任务复用</li>
+              <li>人工：异常与风险升级</li>
+            </ul>
+            <p class="micro">以上是建议的分工框架，不代表现有 Runtime 已具备全部能力；Token Saving 需以真实调用与质量口径验证。</p>
+          </section>
+        </div>
+
+        <div class="callout">
+          <span class="badge">操作边界</span>
+          <p><strong>本页是概念操作流程，不是产品截图或已上线界面。</strong> 现场可任选一个业务请求，填入输入、标准、Action 权限、质量检查和反馈Owner，形成可讨论的 Runtime 验收草案。</p>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <span><strong>讨论/产出</strong> 业务人员最常用的四类请求中，哪一类先做标准模板？产出：首批模板字段、Action 权限级别、异常回流人。</span>
+        <span>27 / 40</span>
+      </footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

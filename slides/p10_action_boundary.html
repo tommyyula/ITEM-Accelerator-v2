@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    .slide-container{
+      width:1280px;
+      height:720px;
+      background:#F7F7F9;
+      color:#4A4A4D;
+      font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;
+      display:flex;
+      flex-direction:column;
+    }
+    .frame{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      height:100%;
+    }
+    .rail{
+      border-right:1px solid #D1D1D6;
+      display:flex;
+      flex-direction:column;
+      padding-top:20px;
+      padding-left:18px;
+      padding-right:16px;
+      gap:16px;
+      min-height:0;
+    }
+    .brand{font-size:24px;font-weight:800;letter-spacing:-1px;color:#1A1A1A}
+    .rail-kicker{font-size:11px;letter-spacing:2px;color:#8E8E93}
+    .chapters{display:flex;flex-direction:column;gap:14px;padding-top:18px}
+    .chapter{font-size:15px;display:flex;gap:10px;color:#8E8E93;line-height:1.3}
+    .chapter .no{width:20px;font-family:monospace;font-size:13px}
+    .chapter.active{color:#1A1A1A;font-weight:700}
+    .chapter.active .no{color:#8BAEAE}
+    .rail-bottom{margin-top:auto;margin-bottom:18px;font-size:12px;line-height:1.6;color:#8E8E93}
+    .main{
+      display:flex;
+      flex-direction:column;
+      padding-top:18px;
+      padding-left:28px;
+      padding-right:40px;
+      min-width:0;
+      height:100%;
+    }
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #D1D1D6;
+      min-height:36px;
+      font-size:12px;
+      letter-spacing:.4px;
+      color:#8E8E93;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      border:1px solid #D1D1D6;
+      border-radius:4px;
+      padding-top:3px;
+      padding-left:8px;
+      padding-right:8px;
+      min-height:22px;
+      font-size:11px;
+      line-height:1.3;
+      color:#4A4A4D;
+    }
+    .top .ref{color:#8BAEAE;font-weight:600}
+    .heading{padding-top:16px}
+    h1{font-size:28px;line-height:1.3;color:#1A1A1A;font-weight:700;letter-spacing:-.4px;margin-bottom:8px}
+    .lead{font-size:16px;line-height:1.45;color:#8E8E93;padding-top:0}
+    .content{
+      display:flex;
+      flex-direction:column;
+      flex:1;
+      justify-content:space-between;
+      gap:12px;
+      padding-top:14px;
+      min-height:0;
+    }
+    h2{font-size:20px;line-height:1.35;color:#1A1A1A;font-weight:650}
+    h3{font-size:16px;line-height:1.35;color:#1A1A1A}
+    p{font-size:14px;line-height:1.5;color:inherit;margin:0}
+    .small{font-size:12px;line-height:1.45;color:#8E8E93}
+    .section{border-top:1px solid #D1D1D6;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.callout{border-top:1px solid #D1D1D6;border-bottom:1px solid #D1D1D6;padding-top:8px;min-height:48px;display:flex;align-items:flex-start;gap:12px}
+    .number{font-family:monospace;font-size:24px;color:#8BAEAE}
+    .footer{border-top:1px solid #D1D1D6;display:flex;justify-content:space-between;gap:16px;margin-top:12px;margin-bottom:14px;padding-top:10px;font-size:12px;line-height:1.5}
+    .footer strong{color:#1A1A1A;font-weight:650}
+    .action-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .flow{display:flex;flex-direction:column;gap:0;border-top:1px solid #1A1A1A}
+.flow-row{display:grid;grid-template-columns:36px 140px 1fr;gap:8px;min-height:44px;padding-top:6px;border-bottom:1px solid #D1D1D6;align-items:start}
+    .flow-row .n{font-family:monospace;color:#8BAEAE;font-size:18px}
+    .flow-row b{color:#1A1A1A;font-size:15px;font-weight:650}
+    .flow-row span{font-size:13px;line-height:1.35;color:#4A4A4D}
+    .risk-table{width:100%;border-collapse:collapse;font-size:13px;line-height:1.35}
+    .risk-table th{text-align:left;color:#1A1A1A;font-weight:650;border-bottom:1px solid #1A1A1A;padding-top:6px;padding-left:6px;padding-right:6px}
+    .risk-table td{border-bottom:1px solid #D1D1D6;padding-top:6px;padding-left:6px;padding-right:6px;vertical-align:top}
+    .risk-table .level{white-space:nowrap;font-weight:650}
+    .low{color:#8BAEAE}
+    .high{color:#8E8E93}
+    .system-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #1A1A1A;border-bottom:1px solid #D1D1D6}
+    .system-row section{min-height:68px;padding-top:8px;padding-left:10px;padding-right:10px;border-right:1px solid #D1D1D6}
+    .system-row section:last-child{border-right:0}
+    .system-row h3{font-size:15px;margin-bottom:6px}
+    .system-row p{font-size:13px;line-height:1.35;margin-top:0}
+    .chip{display:inline-block;border:1px solid #D1D1D6;border-radius:4px;padding:3px 8px;font-size:12px;color:#4A4A4D;margin-bottom:6px}
+  </style>
+</head>
+<body>
+  <div class="slide-container"><div class="frame">
+    <aside class="rail"><div class="brand">AI Accelerator</div><div class="rail-kicker">BUSINESS VALUE WORKSHOP</div><div class="chapters"><div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div><div class="chapter active"><span class="no">1</span><span>总体架构</span></div><div class="chapter"><span class="no">2</span><span>七个案例</span></div><div class="chapter"><span class="no">3</span><span>能力底座</span></div><div class="chapter"><span class="no">4</span><span>业务工具</span></div><div class="chapter"><span class="no">5</span><span>Ontology</span></div><div class="chapter"><span class="no">6</span><span>合作计划</span></div><div class="chapter"><span class="no">7</span><span>决策收敛</span></div></div><div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div></aside>
+    <main class="main"><header class="top"><span class="ref">MD §1.2 第五–六层</span><span class="badge">内容与讨论 · 建议 8 分钟</span></header><div class="heading"><h1>1.2 从能理解到能执行、可审计</h1><p class="lead">Connector 负责连接，Tools 负责封装；Agent 的价值不止回答，而是把可控行动放回业务流程。</p></div>
+      <div class="content">
+        <div class="action-grid">
+          <section class="section"><span class="chip">Connector &amp; Tools · 执行链</span><div class="flow"><div class="flow-row"><div class="n">01</div><b>连接</b><span>Connector 连接系统、数据与外部服务，明确接口与权限。</span></div><div class="flow-row"><div class="n">02</div><b>封装</b><span>Tools 把 API、MCP、查询和业务 Action 变成可调用能力。</span></div><div class="flow-row"><div class="n">03</div><b>判断</b><span>Agent 根据 Ontology、规则、模型结果选择下一步，不越过边界。</span></div><div class="flow-row"><div class="n">04</div><b>回流</b><span>记录输入、版本、结果、人工介入与系统反馈，支持复盘。</span></div></div></section>
+          <section class="section"><span class="chip">风险分级 · 不把自治当默认</span><table class="risk-table"><thead><tr><th>动作级别</th><th>工作坊示例</th><th>控制点</th></tr></thead><tbody><tr><td class="level low">低风险</td><td>通知、查询、状态同步</td><td>标准权限 + 日志 + 可回放</td></tr><tr><td class="level">中风险</td><td>派单、任务更新、建议提交</td><td>规则校验 + 责任人确认</td></tr><tr><td class="level high">高风险</td><td>料件替换、承诺变更、关键写入</td><td>业务定级 + 人工审批 + 证据</td></tr></tbody></table><p class="small">具体 Action、权限和审批边界待 ISS Biz Team 与系统 Owner 确认；以上仅为讨论框架。</p></section>
+        </div>
+        <div class="section"><span class="chip">谁构建、谁使用、谁看结果</span><div class="system-row"><section><h3>Agent Factory</h3><p>构建、编排、测试、Qualification、版本与日志。</p></section><section><h3>ITEMGPT Runtime</h3><p>业务人员使用、配置与运行标准化能力。</p></section><section><h3>ISS Dashboard</h3><p>面向人看采用、质量、人工介入与业务结果口径。</p></section><section><h3>Marketplace</h3><p>面向 Agent 发现、复用和治理 Skill、Model、Tool 等能力。</p></section></div></div>
+        <div class="callout"><span class="number">✓</span><p><strong>工作坊验收：</strong>对一个 Action 写清“输入、调用对象、权限、审批、日志、失败回退、反馈 Owner”。未确认的真实执行不在页面中虚构为 Demo 能力。</p></div>
+      </div>
+      <footer class="footer"><span><strong>讨论 / 产出</strong> 哪些 Action 允许自动执行？产出：Connector/Tool 清单、风险级别、审批人、日志证据与回退路径。</span><span>10 / 40</span></footer>
+    </main>
+  </div></div>
+</body>
+</html>

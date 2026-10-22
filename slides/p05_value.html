@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{width:1280px;height:720px;background:#F7F7F9;color:#4A4A4D;font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;display:flex;flex-direction:column}
+.frame{display:grid;grid-template-columns:240px 1040px;height:100%}
+.rail{border-right:1px solid #D1D1D6;display:flex;flex-direction:column;padding-top:20px;padding-left:20px;padding-right:18px;gap:14px}
+.brand{font-size:24px;font-weight:800;letter-spacing:-1px;color:#1A1A1A}
+.rail-kicker{font-size:11px;letter-spacing:2px;color:#8E8E93}
+.chapters{display:flex;flex-direction:column;gap:12px;padding-top:16px}
+.chapter{font-size:15px;display:flex;gap:10px;color:#8E8E93;line-height:1.3}
+.chapter .no{width:20px;font-family:monospace}
+.chapter.active{color:#1A1A1A;font-weight:700}
+.chapter.active .no{color:#8BAEAE}
+.rail-bottom{margin-top:auto;margin-bottom:18px;font-size:12px;line-height:1.6;color:#8E8E93}
+.main{display:flex;flex-direction:column;padding-top:16px;padding-left:32px;padding-right:38px;min-width:0;height:100%}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #D1D1D6;height:36px;font-size:12px;letter-spacing:.4px;color:#8E8E93}
+.badge{display:inline-flex;align-items:center;border:1px solid #D1D1D6;border-radius:4px;padding-top:3px;padding-left:8px;padding-right:8px;height:24px;font-size:11px;line-height:1.4;color:#4A4A4D}
+.top .ref{color:#8BAEAE;font-weight:600}
+.heading{padding-top:14px}
+h1{font-size:30px;line-height:1.25;color:#1A1A1A;font-weight:700;letter-spacing:-.5px}
+.lead{font-size:15px;line-height:1.45;color:#8E8E93;padding-top:8px}
+.content{display:flex;flex-direction:column;flex:1;justify-content:space-between;gap:10px;padding-top:12px}
+h2{font-size:20px;line-height:1.3;color:#1A1A1A;font-weight:650}
+h3{font-size:17px;line-height:1.35;color:#1A1A1A}
+p,li{font-size:15px;line-height:1.45}
+.small{font-size:12px;line-height:1.4;color:#8E8E93}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.section{border-top:1px solid #D1D1D6;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.number{font-family:monospace;font-size:22px;color:#8BAEAE}
+.footer{border-top:1px solid #D1D1D6;display:flex;justify-content:space-between;gap:16px;margin-top:10px;margin-bottom:14px;padding-top:8px;font-size:12px;line-height:1.45}
+.footer strong{color:#1A1A1A;font-weight:650}
+.value-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.value-flow .section{min-height:150px}
+.value-flow h2{font-size:20px}
+.value-flow p{font-size:14px;line-height:1.45}
+.value-flow strong{color:#1A1A1A}
+.metric{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.metric .section{min-height:80px}
+.metric h3{font-size:17px}
+.metric p{font-size:14px;line-height:1.45}
+.accent{color:#8BAEAE;font-weight:700}
+.caution{border-left:3px solid #E2D9A5;padding-left:12px;font-size:14px;line-height:1.45}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="frame">
+    <aside class="rail">
+      <div class="brand">Item</div>
+      <div class="rail-kicker">BUSINESS VALUE WORKSHOP</div>
+      <div class="chapters">
+        <div class="chapter active"><span class="no">0</span><span>Why · 为什么现在</span></div>
+        <div class="chapter"><span class="no">1</span><span>总体架构</span></div>
+        <div class="chapter"><span class="no">2</span><span>七个案例</span></div>
+        <div class="chapter"><span class="no">3</span><span>能力底座</span></div>
+        <div class="chapter"><span class="no">4</span><span>业务工具</span></div>
+        <div class="chapter"><span class="no">5</span><span>Ontology</span></div>
+        <div class="chapter"><span class="no">6</span><span>合作计划</span></div>
+        <div class="chapter"><span class="no">7</span><span>决策收敛</span></div>
+      </div>
+      <div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div>
+    </aside>
+    <main class="main">
+      <header class="top"><span class="ref">MD §0.2 / 0.5</span><span class="badge">内容与讨论 · 建议 7 分钟</span></header>
+      <div class="heading">
+        <h1>0.2 / 0.5 Why：从“散、浅、贵”走向新阶段</h1>
+        <p class="lead">AI 是 ISS Biz Team 的必走之路；“散、浅、贵”作为 AI 业务探索的必经阶段特征，提示合作进入可持续经营，而非贬低已有实践或承诺单一降成本。</p>
+      </div>
+      <div class="content">
+        <div class="value-flow">
+          <div class="section">
+            <div class="number">01</div>
+            <h2>散</h2>
+            <p><strong>业务痛点：</strong>团队与地区的能力分散，流程存在断点；相似场景难以复用，知识与责任难在组织间稳定流动。</p>
+            <p><strong>转变 / 能力方式：</strong>以 Hero Cases 和共同语义串起场景、数据、模型、Agent 与 Action；由 Owner 确认哪些能力可维护、可复用并形成闭环。</p>
+          </div>
+          <div class="section">
+            <div class="number">02</div>
+            <h2>浅</h2>
+            <p><strong>业务痛点：</strong>不少实践停留在局部试验或辅助问答，组织知识与决策行动之间仍缺少稳定闭环。</p>
+            <p><strong>转变 / 能力方式：</strong>从真实任务与用户流程出发，以 user-centric 应用、Agent 编排、反馈和业务验证，把知识推进到行动。</p>
+          </div>
+          <div class="section">
+            <div class="number">03</div>
+            <h2>贵</h2>
+            <p><strong>业务痛点：</strong>重复建设、集成维护、模型算力与治理全生命周期投入叠加，真实总成本与风险难以用单一口径衡量；不只是 token。</p>
+            <p><strong>转变 / 能力方式：</strong>建立基线与证据，比较业务结果质量、采用复用、技术深度、风险和总成本，在创新速度与投入之间做更平衡的选择。</p>
+          </div>
+        </div>
+        <div class="metric">
+          <div class="section">
+            <h3>可持续</h3>
+            <p>Owner 负责；闭环可维护、可复用，能在业务变化中持续演进。</p>
+          </div>
+          <div class="section">
+            <h3>可衡量</h3>
+            <p>共同建立基线，观察业务结果、质量、采用复用与全生命周期投入。</p>
+          </div>
+          <div class="section">
+            <h3>更平衡</h3>
+            <p>权衡创新速度、价值、技术深度、成本与风险，不认定一味降成本。</p>
+          </div>
+        </div>
+        <div class="caution"><span class="accent">讨论框架：</span>以上是阶段特征与合作命题，需由 ISS Biz Team 及相关业务 Owner 结合真实场景核实；本页不提供数字，也不把假设写成已有测量。</div>
+      </div>
+      <footer class="footer"><span><strong>讨论/产出</strong> 哪个断点最影响 Customer Promise？产出一张“问题—能力—证据”对应表。</span><span>05 / 40</span></footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

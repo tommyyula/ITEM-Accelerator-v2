@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    .slide-container{
+      width:1280px;
+      height:720px;
+      background:#F7F7F9;
+      color:#4A4A4D;
+      font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;
+      display:flex;
+      flex-direction:column;
+    }
+    .frame{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      height:100%;
+      min-height:0;
+      gap:0;
+    }
+    /* RAIL */
+    .rail{
+      border-right:1px solid #D1D1D6;
+      display:flex;
+      flex-direction:column;
+      padding-top:18px;
+      padding-left:16px;
+      padding-right:14px;
+      gap:12px;
+      min-height:0;
+    }
+    .brand{font-size:20px;font-weight:800;letter-spacing:-.5px;color:#1A1A1A}
+    .rail-kicker{font-size:11px;letter-spacing:1.5px;color:#8E8E93}
+    .chapters{display:flex;flex-direction:column;gap:10px;padding-top:12px;overflow:auto}
+    .chapter{font-size:15px;display:flex;gap:10px;color:#8E8E93;line-height:1.3;align-items:flex-start}
+    .chapter .no{width:20px;font-family:monospace;font-size:13px}
+    .chapter.active{color:#1A1A1A;font-weight:700}
+    .chapter.active .no{color:#8BAEAE}
+    .rail-bottom{margin-top:auto;margin-bottom:14px;font-size:12px;line-height:1.6;color:#8E8E93}
+    /* MAIN */
+    .main{
+      display:flex;
+      flex-direction:column;
+      padding-top:16px;
+      padding-left:28px;
+      padding-right:36px;
+      min-width:0;
+      min-height:0;
+    }
+    .top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #D1D1D6;
+      height:36px;
+      font-size:12px;
+      letter-spacing:.4px;
+      color:#8E8E93;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      border:1px solid #D1D1D6;
+      border-radius:4px;
+      padding:3px 8px;
+      min-height:22px;
+      font-size:11px;
+      line-height:1.2;
+      color:#4A4A4D;
+    }
+    .top .ref{color:#8BAEAE;font-weight:600}
+    .heading{padding-top:14px}
+    h1{
+      font-size:26px;
+      line-height:1.25;
+      color:#1A1A1A;
+      font-weight:700;
+      letter-spacing:-.4px;
+      margin-bottom:6px;
+    }
+    .lead{
+      font-size:15px;
+      line-height:1.45;
+      color:#8E8E93;
+      padding-top:6px;
+      margin-bottom:6px;
+    }
+    .content{
+      display:flex;
+      flex-direction:column;
+      flex:1;
+      justify-content:flex-start;
+      gap:12px;
+      padding-top:12px;
+      overflow:auto;
+      min-height:0;
+    }
+    h2{font-size:20px;line-height:1.3;color:#1A1A1A;font-weight:650}
+    h3{font-size:17px;line-height:1.3;color:#1A1A1A;margin:0}
+    p{font-size:14px;line-height:1.45;margin:0}
+    .small{font-size:13px;line-height:1.45;color:#8E8E93}
+    .section{border-top:1px solid #D1D1D6;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+    .two{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .callout{
+      border-top:1px solid #D1D1D6;
+      border-bottom:1px solid #D1D1D6;
+      padding:8px;
+      min-height:48px;
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      background:transparent;
+    }
+    .number{font-family:monospace;font-size:22px;color:#8BAEAE;line-height:1}
+    .footer{
+      border-top:1px solid #D1D1D6;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      margin-top:10px;
+      margin-bottom:10px;
+      padding-top:8px;
+      font-size:12px;
+      line-height:1.4;
+      align-items:center;
+    }
+    .footer strong{color:#1A1A1A;font-weight:650}
+    .model-band{
+      min-height:120px;
+      padding:10px;
+      border-left:3px solid #8BAEAE;
+      border-top:1px solid #1A1A1A;
+      border-bottom:1px solid #D1D1D6;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      background:transparent;
+    }
+    .model-band:nth-child(2){border-left-color:#B4ACBE}
+    .model-band:nth-child(3){border-left-color:#E2D9A5}
+    .model-band .eyebrow{font-size:11px;letter-spacing:1px;color:#8E8E93}
+    .model-band h3{font-size:17px;margin-top:0}
+    .model-band p{font-size:13px;line-height:1.45;margin-top:0}
+    .model-band .examples{font-size:12px;line-height:1.4;color:#8E8E93;margin-top:6px}
+    .handoff{
+      display:grid;
+      grid-template-columns:130px 1fr 1fr 1fr;
+      gap:0;
+      border-top:1px solid #1A1A1A;
+      border-bottom:1px solid #D1D1D6;
+      align-items:start;
+    }
+    .handoff div{
+      min-height:56px;
+      padding-top:8px;
+      padding-left:8px;
+      padding-right:8px;
+      border-right:1px solid #D1D1D6;
+      font-size:13px;
+      line-height:1.35;
+    }
+    .handoff div:last-child{border-right:0}
+    .handoff .head{font-weight:650;color:#1A1A1A}
+    .chip{
+      display:inline-block;
+      border:1px solid #D1D1D6;
+      border-radius:4px;
+      padding:3px 8px;
+      font-size:12px;
+      color:#4A4A4D;
+      margin-bottom:6px;
+    }
+    .three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    /* small responsive tweaks inside fixed canvas to avoid overflow */
+    @media (max-height:720px){
+      .slide-container{height:720px}
+    }
+  </style>
+</head>
+<body>
+  <div class="slide-container"><div class="frame">
+    <aside class="rail"><div class="brand">AI Accelerator</div><div class="rail-kicker">BUSINESS VALUE WORKSHOP</div><div class="chapters"><div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div><div class="chapter active"><span class="no">1</span><span>总体架构</span></div><div class="chapter"><span class="no">2</span><span>七个案例</span></div><div class="chapter"><span class="no">3</span><span>能力底座</span></div><div class="chapter"><span class="no">4</span><span>业务工具</span></div><div class="chapter"><span class="no">5</span><span>Ontology</span></div><div class="chapter"><span class="no">6</span><span>合作计划</span></div><div class="chapter"><span class="no">7</span><span>决策收敛</span></div></div><div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div></aside>
+    <main class="main"><header class="top"><span class="ref">MD §1.2 第四层</span><span class="badge">内容与讨论 · 建议 9 分钟</span></header><div class="heading"><h1>1.2 判断能力必须分工</h1><p class="lead">同一个业务任务需要多种判断：大模型理解与解释，预测模型估计未来，优化模型在约束中求解，Ontology 负责可控边界。</p></div>
+      <div class="content">
+        <div class="two">
+          <section class="model-band"><div class="eyebrow">A · SCENE MODELING</div><h3>场景建模</h3><p>先把业务事件、时序、网络和生命周期结构化，让后续判断有稳定上下文。</p><div class="examples">场景聚合 · 时序结构化 · 物流网络拓扑 · 产品/设备生命周期</div></section>
+          <section class="model-band"><div class="eyebrow">B · DECISION SUPPORT</div><h3>决策支持</h3><p>输出 ETA、需求、产能或风险的预测，并给出置信与原因，供业务选择。</p><div class="examples">Le-TSFM · Router-based Hybrid Forecast · 层级预测 · 预测解释</div></section>
+          <section class="model-band"><div class="eyebrow">C · OPTIMIZATION DECISION</div><h3>优化决策</h3><p>把库存、运输、优先级和资源等约束放入方案比较，产生可审议的取舍。</p><div class="examples">Le-OPT · 多目标优化 · 料件替换 · 路径/装箱/库存优化</div></section>
+        </div>
+        <div class="section"><span class="chip">任务级协同，不是算法堆叠</span><div class="handoff"><div class="head">业务问题</div><div><b>Ontology / 规则</b><br>限定对象、状态、可用动作</div><div><b>预测 / 优化</b><br>分别回答“会怎样 / 怎么选”</div><div><b>LLM / Agent</b><br>理解请求、解释方案、编排流程</div></div></div>
+        <div class="three">
+          <section class="section"><h3>一条 BO 判断链</h3><p>订单与物流事实 → ETA / 风险预测 → 替换、库存、运输方案 → Agent 用业务语言解释。</p></section>
+          <section class="section"><h3>小模型放在哪里</h3><p>高频分类、路由或稳定任务可由小模型与规则承担；具体目标和正式模型名待确认。</p></section>
+          <section class="section"><h3>模型名称的边界</h3><p>Le-TSFM、Router-based Hybrid Forecast、Le-OPT 等沿用原材料写法；正式英文、成熟度与可用范围需 Owner 确认。</p></section>
+        </div>
+        <div class="callout"><span class="number">≠</span><p><strong>工作坊推演：</strong>为一个 Customer Promise 请求标注“哪一步需要预测、哪一步需要优化、哪一步必须规则/人工确认”。没有真实数据时只讨论口径与责任，不填写准确率或 ROI。</p></div>
+      </div>
+      <footer class="footer"><span><strong>讨论 / 产出</strong> 哪些判断可自动化，哪些只提供建议？产出：任务—模型/规则—输入—解释—人工门槛—验收证据矩阵。</span><span>09 / 40</span></footer>
+    </main>
+  </div></div>
+</body>
+</html>

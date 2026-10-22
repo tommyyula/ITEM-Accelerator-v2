@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{width:1280px;min-height:720px;background:#F7F7F9;color:#4A4A4D;font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;display:flex;flex-direction:column}
+.frame{display:grid;grid-template-columns:240px 1040px;flex:1;min-height:720px}
+.rail{border-right:1px solid #D1D1D6;display:flex;flex-direction:column;padding-top:34px;padding-left:28px;padding-right:24px;gap:21px}
+.brand{font-size:29px;font-weight:800;letter-spacing:-1px;color:#1A1A1A}
+.rail-kicker{font-size:12px;letter-spacing:2px;color:#8E8E93}
+.chapters{display:flex;flex-direction:column;gap:20px;padding-top:25px}
+.chapter{font-size:17px;display:flex;gap:12px;color:#8E8E93;line-height:1.4}
+.chapter .no{width:22px;font-family:monospace}
+.chapter.active{color:#1A1A1A;font-weight:700}
+.chapter.active .no{color:#8BAEAE}
+.rail-bottom{margin-top:auto;margin-bottom:26px;font-size:13px;line-height:1.8;color:#8E8E93}
+.main{display:flex;flex-direction:column;padding-top:28px;padding-left:40px;padding-right:60px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #D1D1D6;min-height:42px;font-size:13px;letter-spacing:.5px;color:#8E8E93}
+.badge{display:inline-flex;align-items:center;border:1px solid #D1D1D6;border-radius:4px;padding-top:3px;padding-left:9px;padding-right:9px;min-height:25px;font-size:12px;line-height:1.4;color:#4A4A4D}
+.top .ref{color:#8BAEAE;font-weight:600}
+.heading{padding-top:24px}
+h1{font-size:34px;line-height:1.35;color:#1A1A1A;font-weight:700;letter-spacing:-.5px}
+.lead{font-size:18px;line-height:1.55;color:#8E8E93;padding-top:10px}
+.content{display:flex;flex-direction:column;flex:1;justify-content:space-evenly;gap:18px;padding-top:22px}
+h2{font-size:22px;line-height:1.4;color:#1A1A1A;font-weight:650}
+h3{font-size:19px;line-height:1.4;color:#1A1A1A}
+p,li{font-size:18px;line-height:1.6}
+.small{font-size:14px;line-height:1.55;color:#8E8E93}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.four{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.section{border-top:1px solid #D1D1D6;padding-top:14px;display:flex;flex-direction:column;gap:9px}
+.number{font-family:monospace;font-size:28px;color:#8BAEAE}
+.line{border-top:1px solid #D1D1D6}
+.table{width:100%;border-collapse:collapse;font-size:16px;line-height:1.5}
+.table th{text-align:left;color:#1A1A1A;font-size:16px;font-weight:650;border-bottom:1px solid #1A1A1A;padding-top:8px;padding-left:10px;padding-right:10px;min-height:30px}
+.table td{border-bottom:1px solid #D1D1D6;padding-top:10px;padding-left:10px;padding-right:10px;vertical-align:top;min-height:39px}
+.callout{border-top:1px solid #D1D1D6;border-bottom:1px solid #D1D1D6;padding-top:12px;min-height:58px;display:flex;align-items:flex-start;gap:14px}
+.footer{border-top:1px solid #D1D1D6;display:flex;justify-content:space-between;gap:20px;margin-top:18px;margin-bottom:22px;padding-top:12px;font-size:13px;line-height:1.6}
+.footer strong{color:#1A1A1A;font-weight:650}
+/* page-specific: route overview */
+.route{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:20px}
+.route .phase{border-top:2px solid #8BAEAE;padding-top:10px;min-height:118px}
+.route .phase:nth-child(2){border-top-color:#B4ACBE}
+.route .phase:nth-child(3){border-top-color:#E2D9A5}
+.phase .kicker{font-size:12px;letter-spacing:1.4px;color:#8E8E93}
+.phase h3{margin-top:4px;font-size:20px}
+.phase p{font-size:16px;line-height:1.5;margin-top:5px}
+.route-note{display:grid;grid-template-columns:1.35fr 1fr;gap:28px}
+.output-list{display:grid;grid-template-columns:1fr 1fr;gap:7px 22px;padding-top:3px}
+.output-list div{font-size:16px;line-height:1.45;border-bottom:1px solid #D1D1D6}
+.output-list b{color:#1A1A1A}
+</style>
+</head>
+<body>
+<div class="slide-container">
+  <div class="frame">
+    <aside class="rail">
+      <div class="brand">item</div>
+      <div class="rail-kicker">BUSINESS VALUE WORKSHOP</div>
+      <div class="chapters">
+        <div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div>
+        <div class="chapter"><span class="no">1</span><span>总体架构</span></div>
+        <div class="chapter"><span class="no">2</span><span>七个案例</span></div>
+        <div class="chapter"><span class="no">3</span><span>能力底座</span></div>
+        <div class="chapter"><span class="no">4</span><span>业务工具</span></div>
+        <div class="chapter"><span class="no">5</span><span>Ontology</span></div>
+        <div class="chapter"><span class="no">6</span><span>合作计划</span></div>
+        <div class="chapter active"><span class="no">7</span><span>决策收敛</span></div>
+      </div>
+      <div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div>
+    </aside>
+    <main class="main">
+      <header class="top"><span class="ref">MD §7.1 · CHAPTER REVIEW</span><span class="badge">章节综述 · 建议 5 分钟</span></header>
+      <div class="heading">
+        <h1>7. From Hero Cases to Joint Product</h1>
+        <p class="lead">本章把前面形成的场景、底座和合作计划，收敛为可验证的联合产品路径；先分清状态，再决定下一门。</p>
+      </div>
+      <div class="content">
+        <div class="callout"><span class="number">01</span><p><strong>结论：</strong>短期不追求更多孤立 Agent，而是选定少量 Hero Cases，完成知识、数据与 Ontology 共建；中长期再把已验证能力沉淀为 ISS Service Intelligence Solution 等可复用产品。所有未确认名称、成熟度和边界继续标为“待确认”。</p></div>
+        <div class="route" aria-label="短中长期路线">
+          <div class="phase"><div class="kicker">SHORT TERM · 验证</div><h3>首批 Hero Cases</h3><p>BO / Customer Promise 优先候选；知识挖掘、接口梳理、Ontology 与第一个 Agent 共建。</p></div>
+          <div class="phase"><div class="kicker">MID TERM · 复用</div><h3>能力进入组织入口</h3><p>扩展 CEC SOP、Genesys、WMS、物流与供应链决策；运行 ITEMGPT Runtime、Agent Factory、ISS Dashboard 与 Marketplace。</p></div>
+          <div class="phase"><div class="kicker">LONG TERM · 联合产品</div><h3>垂直产品与复制</h3><p>沉淀服务供应链智能化，在其他区域与业务线复制；Genesys Marketplace 等外部推广仅作探索。</p></div>
+        </div>
+        <div class="route-note">
+          <section class="section"><h2>本章内容路线</h2><p class="small">先看路线与范围 → 再核对会前事实与会后议题 → 最后填写四项确认。这样“方向认可”才能转成 Owner、输入、产出和时间边界。</p></section>
+          <section class="section"><h2>本章产出</h2><div class="output-list"><div><b>已确认</b> 可直接进入下一门</div><div><b>待确认</b> 需指定 Owner 补齐</div><div><b>不在本期</b> 不包装成承诺</div><div><b>下一步</b> 决策门与时间边界</div></div></section>
+        </div>
+      </div>
+      <footer class="footer"><span><strong>讨论 / 产出</strong> 哪些 Hero Cases 能承担联合产品的第一证据？现场把每项标为已确认、待确认或不在本期。</span><span>38 / 40</span></footer>
+    </main>
+  </div>
+</div>
+</body>
+</html>

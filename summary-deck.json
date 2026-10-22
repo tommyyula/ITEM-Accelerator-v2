@@ -1,0 +1,143 @@
+[
+  {
+    "id": "s01_cover",
+    "chapter": 0,
+    "ref": "0.1–0.2 / 0.5",
+    "title": "Why：AI业务价值与三方互补优势",
+    "minutes": 0,
+    "type": "会前阅读",
+    "detail_pages": [
+      1
+    ]
+  },
+  {
+    "id": "s02_opening",
+    "chapter": 0,
+    "ref": "0.2–0.5",
+    "title": "Why now：从散、浅、贵走向新阶段",
+    "minutes": 0,
+    "type": "会前阅读",
+    "detail_pages": [
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  {
+    "id": "s03_architecture",
+    "chapter": 1,
+    "ref": "1.1–1.2",
+    "title": "从业务知识到可执行行动",
+    "minutes": 0,
+    "type": "会前阅读",
+    "detail_pages": [
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  {
+    "id": "s04_cases",
+    "chapter": 2,
+    "ref": "2.1–2.7",
+    "title": "七个案例与 Hero Cases 组合",
+    "minutes": 0,
+    "type": "会前阅读",
+    "detail_pages": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  {
+    "id": "s05_foundation",
+    "chapter": 3,
+    "ref": "3.1–3.4",
+    "title": "统一上下文与能力复用",
+    "minutes": 0,
+    "type": "会前阅读",
+    "detail_pages": [
+      22,
+      23,
+      24,
+      25
+    ]
+  },
+  {
+    "id": "s06_tools",
+    "chapter": 4,
+    "ref": "4.1–4.2",
+    "title": "两套业务工具与角色分工",
+    "minutes": 0,
+    "type": "会前阅读",
+    "detail_pages": [
+      26,
+      27,
+      28,
+      29
+    ]
+  },
+  {
+    "id": "s07_ontology",
+    "chapter": 5,
+    "ref": "5.1–5.3",
+    "title": "Ontology Studio 与知识共建",
+    "minutes": 0,
+    "type": "会前阅读",
+    "detail_pages": [
+      30,
+      31,
+      32
+    ]
+  },
+  {
+    "id": "s08_roadmap",
+    "chapter": 6,
+    "ref": "6.1–6.11",
+    "title": "从能力共建走向联合产品",
+    "minutes": 0,
+    "type": "会前阅读",
+    "detail_pages": [
+      33,
+      34,
+      35,
+      36,
+      37
+    ]
+  },
+  {
+    "id": "s09_decisions",
+    "chapter": 7,
+    "ref": "7.1–7.3",
+    "title": "从 Hero Cases 到联合产品",
+    "minutes": 0,
+    "type": "会前阅读",
+    "detail_pages": [
+      38,
+      39,
+      40
+    ]
+  },
+  {
+    "id": "s10_reading",
+    "chapter": 7,
+    "ref": "0–7 / 结论",
+    "title": "会前、会上、会后三份材料联动",
+    "minutes": 0,
+    "type": "阅读指引",
+    "detail_pages": [
+      1,
+      40
+    ]
+  }
+]

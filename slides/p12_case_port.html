@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+.slide-container{
+  width:1280px;
+  height:720px;
+  background:#F7F7F9;
+  color:#4A4A4D;
+  font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;
+  display:flex;
+  flex-direction:column;
+}
+.frame{
+  display:grid;
+  grid-template-columns:240px 1040px;
+  height:100%;
+}
+.rail{
+  border-right:1px solid #D1D1D6;
+  display:flex;
+  flex-direction:column;
+  padding-top:18px;
+  padding-left:16px;
+  padding-right:12px;
+  gap:14px;
+}
+.brand{
+  font-size:26px;
+  font-weight:800;
+  letter-spacing:-1px;
+  color:#1A1A1A;
+}
+.rail-kicker{font-size:11px;letter-spacing:2px;color:#8E8E93}
+.chapters{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding-top:14px;
+}
+.chapter{
+  font-size:15px;
+  display:flex;
+  gap:10px;
+  color:#8E8E93;
+  line-height:1.3;
+}
+.chapter .no{width:20px;font-family:monospace}
+.chapter.active{color:#1A1A1A;font-weight:700}
+.chapter.active .no{color:#8BAEAE}
+.rail-bottom{
+  margin-top:auto;
+  margin-bottom:16px;
+  font-size:12px;
+  line-height:1.6;
+  color:#8E8E93;
+}
+.main{
+  display:flex;
+  flex-direction:column;
+  padding-top:18px;
+  padding-left:28px;
+  padding-right:40px;
+  height:100%;
+  min-width:0;
+}
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid #D1D1D6;
+  height:36px;
+  font-size:12px;
+  letter-spacing:.4px;
+  color:#8E8E93;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  border:1px solid #D1D1D6;
+  border-radius:4px;
+  padding-top:2px;
+  padding-left:8px;
+  padding-right:8px;
+  height:22px;
+  font-size:11px;
+  line-height:1.2;
+  color:#4A4A4D;
+}
+.top .ref{color:#8BAEAE;font-weight:600}
+.heading{padding-top:14px}
+h1{
+  font-size:30px;
+  line-height:1.28;
+  color:#1A1A1A;
+  font-weight:700;
+  letter-spacing:-.4px;
+  margin-bottom:6px;
+}
+.lead{
+  font-size:16px;
+  line-height:1.45;
+  color:#8E8E93;
+}
+.content{
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  justify-content:flex-start;
+  gap:12px;
+  padding-top:12px;
+}
+h2{font-size:20px;line-height:1.35;color:#1A1A1A;font-weight:650;margin:0}
+h3{font-size:18px;line-height:1.35;color:#1A1A1A;margin:0}
+p,li{font-size:16px;line-height:1.45;margin:0}
+.small{font-size:13px;line-height:1.4;color:#8E8E93}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.section{
+  border-top:1px solid #D1D1D6;
+  padding-top:10px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.footer{
+  border-top:1px solid #D1D1D6;
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  margin-top:12px;
+  margin-bottom:10px;
+  padding-top:10px;
+  font-size:12px;
+  line-height:1.5;
+}
+.footer strong{color:#1A1A1A;font-weight:650}
+.video-layout{
+  display:grid;
+  grid-template-columns:440px 420px;
+  gap:18px;
+  align-items:start;
+}
+.video-slot{
+  width:440px;
+  height:247px; /* 16:9 approx */
+  border:1px solid #8BAEAE;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  color:#8E8E93;
+  background:#FBFBFC;
+  flex-shrink:0;
+}
+.video-slot .play{font-size:28px;color:#8BAEAE;line-height:1}
+.video-slot b{font-size:15px;color:#4A4A4D;font-weight:650}
+.video-slot span{font-size:12px}
+.side{display:flex;flex-direction:column;gap:10px}
+.side h2{font-size:18px}
+.side p{font-size:15px;line-height:1.4}
+.side .tagline{border-top:1px solid #D1D1D6;padding-top:8px}
+.process{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  border-top:1px solid #D1D1D6;
+  padding-top:10px;
+}
+.process div{padding-right:10px;border-right:1px solid #D1D1D6}
+.process div:last-child{border-right:0}
+.process b{display:block;color:#1A1A1A;font-size:15px;margin-bottom:3px}
+.process p{font-size:14px;line-height:1.35}
+.tag{display:inline-block;border:1px solid #D1D1D6;border-radius:4px;padding:3px 8px;font-size:12px;color:#4A4A4D;margin-right:5px}
+.accent{color:#8BAEAE;font-weight:650}
+</style></head><body><div class="slide-container"><div class="frame"><aside class="rail"><div class="brand">Item</div><div class="rail-kicker">BUSINESS VALUE WORKSHOP</div><nav class="chapters"><div class="chapter"><span class="no">0</span><span>Why · 为什么现在</span></div><div class="chapter"><span class="no">1</span><span>总体架构</span></div><div class="chapter active"><span class="no">2</span><span>七个案例</span></div><div class="chapter"><span class="no">3</span><span>能力底座</span></div><div class="chapter"><span class="no">4</span><span>业务工具</span></div><div class="chapter"><span class="no">5</span><span>Ontology</span></div><div class="chapter"><span class="no">6</span><span>合作计划</span></div><div class="chapter"><span class="no">7</span><span>决策收敛</span></div></nav><div class="rail-bottom">Item × ISS Biz Team × COO AI Team<br>Hero Cases → Joint Product</div></aside><main class="main"><header class="top"><span class="ref">MD §2.1</span><span class="badge">Demo 与讨论 · 建议 15 分钟</span></header><div class="heading"><h1>2.1 港口拖柜：无头 Agent 跑完整流程</h1><p class="lead">证明 Agent 能在后台承担一条真实流程，而不是只在对话框里给出下一步建议。</p></div><div class="content"><div class="video-layout"><div class="video-slot" data-video-slot="case-2.1"><div class="play">▷</div><b>Demo 视频 · 待接入</b><span>16:9 视频区 · 待接入素材</span></div><div class="side"><h2>业务任务链</h2><p><span class="accent">任务</span> → 打单 → 监控 → 派车 → 状态更新 → 收付款；Master Agent 拆分子 Agent，状态事件触发后续动作。</p><div class="tagline"><h3>观看检查点</h3><p>1. 输入运输任务后，是否生成可追踪的子任务？<br>2. 状态变化如何触发监控、派车与同步？<br>3. 异常是否明确交人、保留上下文与日志？<br>4. 结果能否回放，而不是只显示最终答案？</p></div></div></div><div class="process"><div><b>流程证明</b><p>订单、监控、派车、状态、结算由标准 Tools 与 Connector 串联。</p></div><div><b>迁移讨论</b><p>可迁移至服务供应链、Field Service、Global Logistics；迁移条件待确认。</p></div><div><b>指标口径</b><p>介入次数、异常处置时间、状态同步完整性、过程可追踪性；无现成数据。</p></div></div><div class="section"><h2>边界提醒</h2><p>原材料中的历史“570→320”只能作为待核历史案例口径，不能写成 ISS Biz Team 承诺或本项目结果。Demo 需区分真实执行、模拟动作与待确认接口。</p></div></div><footer class="footer"><span><strong>讨论 / 产出</strong> 哪一步最适合先迁移到服务供应链？产出异常分级、人工接管点与 Connector 清单。</span><span>12 / 40</span></footer></main></div></div></body></html>
